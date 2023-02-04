@@ -1,6 +1,9 @@
 /* global variable colors */
 :root {
-
+    --darkBackground: #323232;
+    --lightBackground: #DDD0C8;
+    --blackColor: #000000;
+    --whiteColor: #FFFFFF;
 }
 
 /* global styling */
