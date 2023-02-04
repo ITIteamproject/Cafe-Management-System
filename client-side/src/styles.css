@@ -8,5 +8,5 @@
 
 /* global styling */
 html, body {
-    
+    background-color: var(--lightBackground);
 }
