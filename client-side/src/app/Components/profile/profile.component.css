@@ -1,0 +1,17 @@
+.profile-container {
+    display: flex;
+    padding: 8px;
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 16px;
+    color: var(--blackColor)    
+}
+
+.user-image img {
+    border-radius: 100%;
+}
