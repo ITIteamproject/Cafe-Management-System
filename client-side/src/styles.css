@@ -7,6 +7,11 @@
 }
 
 /* global styling */
+* {
+    font-family:monospace;
+    font-weight: 200;
+}
+
 html, body {
     background-color: var(--lightBackground);
 }
