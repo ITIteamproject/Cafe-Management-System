@@ -9,9 +9,10 @@ const userRouter = require('./routers/usersRouter');
 app.use('/users', userRouter)
 
 // connect to database 
-mongoose.connect('mongodb+srv://member:member123@cluster.cmlunqp.mongodb.net/cafeDB', (err) => {
+// mongo atlas url-> mongodb+srv://member:member123@cluster.cmlunqp.mongodb.net/cafeDB
+mongoose.connect('mongodb://127.0.0.1:27017/cafeDemo', (err) => {
     if (err) console.log(err, "can't connect to database");
-    console.log('database connected sucessfully');
+    console.log('connected to db successfully');
 });
 
 app.listen(port, () => {
