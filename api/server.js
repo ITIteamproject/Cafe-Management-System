@@ -5,8 +5,13 @@ const port = 3000;
 
 const userRouter = require('./routers/usersRouter');
 
-
 app.use('/users', userRouter)
+
+// error middleware
+app.use((err, req, res, next) => {
+    if(!err.statusCode) err.message = 'something went wrong'
+    res.status(err.statusCode || 500).send(err.message)
+})
 
 // connect to database 
 // mongo atlas url-> mongodb+srv://member:member123@cluster.cmlunqp.mongodb.net/cafeDB
