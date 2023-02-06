@@ -25,10 +25,9 @@ const authorizeUser = async (req, res, next) => {
     
     try {
         // if all good it will return payload
-        // otherwise will throw error
+        // otherwise will throw error implicitly
         const payload = await verifyAsync(token, secretKey)
-        console.log('catch')
-        // if(payload.id !== id) throw Error()
+        if(payload.id !== id) throw Error()
         next()
 
     } catch (error) {
