@@ -1,9 +1,23 @@
 const express = require('express')
 const userRouter = express.Router()
 
-const {User} = require('../models')
+const customError = require('../errorHandling')
+const { User } = require('../models')
+const {
+    comparePasswd,
+    signUserToken,
+    authorizeUser
+} = require('../helpers/userHelpers')
+
+// grand user token when login or signup only 
+// using signUserToken func 
+
+// check user token whether it is valid or not 
+// using authorizeuser middleware 
+
 
 // get all users
+// just for development reasons
 userRouter.get('/', async (req, res, next) => {
     const allusers = await User.find({})
     res.status(200).json(allusers)
@@ -12,15 +26,13 @@ userRouter.get('/', async (req, res, next) => {
 // get user info by id
 userRouter.get('/:id', async (req, res, next) => {
     try {
-        const {id} = req.params
-        
-        const userInfo = await User.findById(id)
-        if(!userInfo) throw new Error('user not found')
+        const { id } = req.params
 
+        const userInfo = await User.findById(id) // if not found it will throw error implicitly
         res.status(200).json(userInfo)
 
     } catch (error) {
-        next(error)
+        next(customError(401, 'invalid username or password'))
     }
 })
 
