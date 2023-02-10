@@ -1,0 +1,281 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div fxLayout="column">
+    <mat-toolbar color="primary" fxFlex.gt-xs="100%" style="background-color: #2a2185;">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>coffee</mat-icon>
+        </button>
+        <span style="font-family: cursive">Coffee System</span>
+        <div style=" width: 100%; margin-left: 30px;" fxHide.lt-sm="true">
+            <input type="search" id="email" placeholder="Search Coffee System ...." />
+        </div>
+        <span class="example-spacer"></span>
+        <div fxHide.lt-md="true" fxLayoutAlign="center center">
+            <button mat-icon-button>
+                <mat-icon>diamond</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>token</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <div class="user">
+                    <img src="assets\about-pic.jpg" alt="">
+                </div>
+            </button>
+        </div>
+        <button mat-icon-button>
+            <mat-icon>logout</mat-icon>
+        </button>
+    </mat-toolbar>
+
+
+
+    <div class="backg" fxLayoutAlign="center">
+
+        <!-- Profile content -->
+        <div class="container2" fxLayout.lt-lg="column">
+            <div class="left_side">
+                <div class="profileText">
+                    <div class="imgBx">
+                        <img src="assets\about-pic.jpg" alt="">
+                    </div>
+                    <h2>ITI 43 Team</h2>
+                    <h4 style="color: white; font-weight: bold;">ITITEAM@gmail.com </h4>
+                    <button mat-raised-button style="background-color: #1c09ed;" class="login-button">
+                        <span style="color: white; font-weight: bold;">Change your photo</span>
+                    </button>
+                </div>
+                <div class="Info">
+                    <h3 fxLayoutAlign="center" class="title">Your Information</h3>
+                    <ul>
+                        <li>
+                            <span class="icon"></span>
+                            <span class="text">
+                                H-Y-M-A2@gmail.com
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            <span class="text">
+                                +02 0124586555
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            <span class="text">
+                                Cairo-Egypt
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+
+                            <span class="text">
+                                Angular
+                            </span>
+                        </li>
+                        <li>
+                            <span class="icon"></span>
+                            <span class="text">
+                                Node JS
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="right_side">
+                <mat-tab-group mat-stretch-tabs class="example-stretched-tabs" animationDuration="400ms"
+                    color="primary">
+                    <!-- first -->
+                    <mat-tab label="User Order">
+                        <ng-template mat-tab-label>
+                            <mat-icon>update</mat-icon>
+                            User Order
+                        </ng-template>
+                        <div class="recentOrders">
+                            <div class="cardHeader">
+                                <h2>Recent Orders</h2>
+                                <a href="#" class="btn">View All</a>
+                            </div>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>Price</td>
+                                        <td>Payment</td>
+                                        <td>Status</td>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$110</td>
+                                        <td>Due</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status return">Return</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$620</td>
+                                        <td>Due</td>
+                                        <td><span class="status inProgress">In Progress</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status delivered">Delivered</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$110</td>
+                                        <td>Due</td>
+                                        <td><span class="status pending">Pending</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$1200</td>
+                                        <td>Paid</td>
+                                        <td><span class="status return">Return</span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Coffee 1</td>
+                                        <td>$620</td>
+                                        <td>Due</td>
+                                        <td><span class="status inProgress">In Progress</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </mat-tab>
+                    <!-- Tab 2 -->
+
+                    <mat-tab label="Update Password">
+                        <ng-template mat-tab-label>
+                            <mat-icon>lock</mat-icon>
+                            Update Password
+                        </ng-template>
+                        <form>
+                            <div class="pass">
+                                <mat-form-field>
+                                    <mat-label>Old Password</mat-label>
+                                    <input matInput placeholder="Old Password" type="password" required minlength="6"
+                                        name="password" ngModel #password="ngModel">
+                                    <mat-error *ngIf="password.errors && password.hasError('required')">
+                                        Password is required
+                                    </mat-error>
+                                    <mat-error *ngIf="password.errors && password.errors?.['minlength']">
+                                        Password must be of length 6
+                                    </mat-error>
+                                    <mat-icon matSuffix>lock</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="pass">
+                                <mat-form-field>
+                                    <mat-label>New Password</mat-label>
+                                    <input matInput placeholder="New Password" type="password" required minlength="6"
+                                        name="new password" ngModel #passwordn="ngModel">
+                                    <mat-error *ngIf="passwordn.errors && passwordn.hasError('required')">
+                                        Password is required
+                                    </mat-error>
+                                    <mat-error *ngIf="passwordn.errors && passwordn.errors?.['minlength']">
+                                        Password must be of length 6
+                                    </mat-error>
+                                    <mat-icon matSuffix>lock</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="repass">
+                                <mat-form-field>
+                                    <mat-label>Re-enter password</mat-label>
+                                    <input matInput placeholder="New Password" type="password" required minlength="6"
+                                        name="repassword" ngModel #repassword="ngModel">
+                                    <mat-error *ngIf="repassword.errors && repassword.hasError('required') ">
+                                        Re-Enter Password is required
+                                    </mat-error>
+                                    <mat-error *ngIf="repassword.errors?.['minlength']">
+                                        Password must be of length 6
+                                    </mat-error>
+                                    <mat-icon matSuffix>lock</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <button mat-raised-button
+                                style="background-color: #2a2185; color: white; font-size: 1.5rem;"
+                                class="login-button">
+                                Save
+                            </button>
+                        </form>
+                    </mat-tab>
+                    <!-- Next -->
+                    <mat-tab label="Profile Setting">
+                        <ng-template mat-tab-label>
+                            <mat-icon>settings</mat-icon>
+                            Profile Settings
+                        </ng-template>
+                        <form>
+                            <div class="name">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Full Name</mat-label>
+                                    <input matInput type="text" placeholder="Full Name">
+                                    <mat-icon matSuffix>man</mat-icon>
+                                </mat-form-field>
+
+                            </div>
+                            <div class="tel">
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Telephone</mat-label>
+
+                                    <input type="tel" matInput placeholder="0125-555-1234">
+                                    <mat-icon matSuffix>mode_edit</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="email">
+
+                                <mat-form-field class="example-full-width">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" matInput placeholder="Ex. pat@example.com">
+                                    <mat-icon matSuffix>email</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="address">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Address</mat-label>
+                                    <input matInput placeholder="Full Adress">
+                                    <mat-icon matSuffix>home</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <button mat-raised-button
+                                style="background-color: #2a2185; color: white; font-size: 1.5rem;"
+                                class="login-button">
+                                Save
+                            </button>
+                        </form>
+                    </mat-tab>
+
+                </mat-tab-group>
+            </div>
+
+        </div>
+    </div>
+</div>
