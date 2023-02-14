@@ -1,37 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-
-<div fxLayout="column">
-    <mat-toolbar color="primary" fxFlex.gt-xs="100%" style="background-color: #2a2185;">
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>coffee</mat-icon>
-        </button>
-        <span style="font-family: cursive">Coffee System</span>
-        <div style=" width: 100%; margin-left: 30px;" fxHide.lt-sm="true">
-            <input type="search" id="email" placeholder="Search Coffee System ...." />
-        </div>
-        <span class="example-spacer"></span>
-        <div fxHide.lt-md="true" fxLayoutAlign="center center">
-            <button mat-icon-button>
-                <mat-icon>diamond</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>token</mat-icon>
-            </button>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                <div class="user">
-                    <img src="assets\about-pic.jpg" alt="">
-                </div>
-            </button>
-        </div>
-        <button mat-icon-button>
-            <mat-icon>logout</mat-icon>
-        </button>
-    </mat-toolbar>
-
-
-
+<app-toolbar></app-toolbar>
     <div class="backg" fxLayoutAlign="center">
 
         <!-- Profile content -->
@@ -43,8 +12,8 @@
                     </div>
                     <h2>ITI 43 Team</h2>
                     <h4 style="color: white; font-weight: bold;">ITITEAM@gmail.com </h4>
-                    <button mat-raised-button style="background-color: #1c09ed;" class="login-button">
-                        <span style="color: white; font-weight: bold;">Change your photo</span>
+                    <button mat-raised-button style="background-color: #eef4ee;" class="login-button">
+                        <span style="color: #be9c79; font-weight: bold;">Change your photo</span>
                     </button>
                 </div>
                 <div class="Info">
@@ -221,7 +190,7 @@
                                 </mat-form-field>
                             </div>
                             <button mat-raised-button
-                                style="background-color: #2a2185; color: white; font-size: 1.5rem;"
+                                style="background-color: #be9c79; color: white; font-size: 1.5rem;"
                                 class="login-button">
                                 Save
                             </button>
@@ -266,7 +235,7 @@
                                 </mat-form-field>
                             </div>
                             <button mat-raised-button
-                                style="background-color: #2a2185; color: white; font-size: 1.5rem;"
+                                style="background-color: #be9c79; color: white; font-size: 1.5rem;"
                                 class="login-button">
                                 Save
                             </button>
@@ -278,4 +247,3 @@
 
         </div>
     </div>
-</div>

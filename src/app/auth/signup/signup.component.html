@@ -1,13 +1,13 @@
 <div class="page" fxLayoutAlign="center center">
     <mat-card class="mat-elevation-z12" fxFlex.sm="80%" fxFlex.xs="100%">
         <mat-card-title style="text-align:center;" fxLayoutGap="10px">
-            <img src="assets\logo.png" alt="">
-            <span>Welcome</span>
+            <img src="assets\heading-img.png" alt="">
+
         </mat-card-title>
         <mat-tab-group mat-stretch-tabs animationDuration="400ms" color="primary">
             <mat-tab label="Sign In">
                 <mat-card-content>
-                    <form #f="ngForm" (submit)="OnSubmit(f)">
+                    <form #log="ngForm" (ngSubmit)="login(log)">
                         <mat-form-field>
                             <mat-label>Email</mat-label>
                             <input matInput placeholder="Email" email required name="email" ngModel #email="ngModel">
@@ -29,8 +29,8 @@
                         </mat-form-field>
                         <mat-checkbox color="primary" name="Remember"><span class="remember">Remember Me!
                             </span></mat-checkbox>
-                        <button mat-raised-button style="background-color: #2a2185;" class="login-button"
-                            [disabled]="f.invalid">
+                        <button mat-raised-button style="background-color: #be9c79;" class="login-button">
+                            <!-- [disabled]="f.invalid"> -->
                             <span style="color: white;">Sign In</span>
                         </button>
 
@@ -42,7 +42,7 @@
             <!-- /////////////////////Registeration//////////////////////////////////////////// -->
             <mat-tab label="Sign Up">
                 <mat-card-content>
-                    <form>
+                    <form #f="ngForm" (submit)="OnSubmit(f)">
                         <mat-form-field>
                             <mat-label>Username</mat-label>
 
@@ -83,24 +83,23 @@
                             <mat-error *ngIf="repassword.errors?.['minlength']">
                                 Password must be of length 6
                             </mat-error>
+                            <mat-error *ngIf=" password.value != repassword.value ">
+                                password not matched
+                            </mat-error>
                             <mat-icon matSuffix>lock</mat-icon>
                         </mat-form-field>
-                        <div fxLayoutAlign="center center">
-
-                            <button mat-raised-button>
-                                <input class="ng-hide" id="input-file-id" multiple type="file" />
-                                <label for="input-file-id" fxHide.lt-sm="true">
-                                    Choose Your Img</label>
-                            </button>
-                        </div>
 
 
 
-                        <mat-radio-group aria-label="Select an option" fxLayoutAlign="center center" color="primary">
-                            <mat-radio-button value="male"><span class="male">Male</span></mat-radio-button>
-                            <mat-radio-button value="female"><span class="female">Female</span></mat-radio-button>
+
+                        <mat-radio-group aria-label="Select an option" name="gender" ngModel #gender="ngModel"
+                            fxLayoutAlign="center center" color="primary">
+                            <mat-radio-button name="gender" value="male"><span
+                                    class="male">Male</span></mat-radio-button>
+                            <mat-radio-button name="gender" value="female"><span
+                                    class="female">Female</span></mat-radio-button>
                         </mat-radio-group>
-                        <button mat-raised-button style="background-color: #2a2185;" class="login-button">
+                        <button mat-raised-button style="background-color: #be9c79;" class="login-button">
                             <span style="color: white;">Sign Up</span>
                         </button>
 

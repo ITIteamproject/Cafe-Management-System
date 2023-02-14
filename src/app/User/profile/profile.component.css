@@ -1,16 +1,14 @@
-* {
+.backg {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-}
+    margin-top: 10px;
 
-.backg {
-
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    width: 100%;
 }
 
 .example-spacer {
@@ -32,9 +30,31 @@ mat-toolbar img {
     padding-bottom: 3px;
 }
 
+input {
+
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+    border-radius: 7px;
+    border: 2px solid #c0bdbd;
+    padding: 10px;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #be9c79;
+}
+
+input::placeholder {
+    font: 20px curse;
+    color: #be9c79;
+    font-weight: bold;
+}
+
 .container2 {
     position: relative;
-    margin-top: 10px;
+
+    border-radius: 15px;
     width: 95%;
     background-color: #fff;
     display: grid;
@@ -45,16 +65,17 @@ mat-toolbar img {
 
 .container2 .left_side {
     position: relative;
-    background-color: #2a2185;
-    padding: 40px;
-
+    background-color: #be9c79;
+    padding: 35px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .container2 .right_side {
     position: relative;
     background-color: #fff;
-    padding: 40px;
-
+    padding: 35px;
+    border-radius: 15px;
 }
 
 .profileText {
@@ -72,7 +93,7 @@ mat-toolbar img {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid #8de02c;
+    border: 2px solid #fbfcf9;
 }
 
 .profileText .imgBx img {
@@ -144,39 +165,7 @@ mat-toolbar img {
     }
 }
 
-.mat-tab-label {
-    background: aqua;
-    color: blue;
-    width: 60px;
-    height: 50px;
-    font-size: 20px;
-}
 
-.mat-tab-group.mat-primary .mat-ink-bar {
-    background: brown;
-    height: 5px;
-}
-
-input {
-
-    display: inline-block;
-    width: 50%;
-    font-size: 15px;
-    border-radius: 7px;
-    border: 2px solid #c0bdbd;
-    padding: 10px;
-}
-
-input:focus {
-    outline: 0;
-    border-color: #6610f2;
-}
-
-input::placeholder {
-    font: 20px curse;
-    color: #6610f2;
-    font-weight: bold;
-}
 
 .login-button {
     margin-top: 20px;
@@ -187,7 +176,7 @@ input::placeholder {
 
 .name {
     margin-top: 20px;
-    
+
     width: 100%;
 }
 
@@ -200,7 +189,8 @@ input::placeholder {
 .email,
 .address,
 .pass,
-.repass , .name {
+.repass,
+.name {
     display: flex;
     justify-content: center;
 
@@ -217,30 +207,13 @@ input::placeholder {
     margin-top: 30px;
 }
 
-.user {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    bottom: 8.5px;
-    right: 7px;
-}
 
-.user img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 .recentOrders {
     position: relative;
     display: grid;
     min-height: 500px;
-    background: var(--white);
+    background: white;
     padding: 20px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
@@ -254,28 +227,29 @@ input::placeholder {
 
 .cardHeader h2 {
     font-weight: 600;
-    color: #2a2185;
+    color: #be9c79;
 }
 
 .cardHeader .btn {
     position: relative;
     padding: 5px 10px;
-    background: #2a2185;
+    background: #be9c79;
     text-decoration: none;
     color: white;
     border-radius: 6px;
 }
- table {
+
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
- table thead td {
+table thead td {
     font-weight: 600;
 }
 
- .recentOrders table tr {
+.recentOrders table tr {
     color: #222;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -284,24 +258,24 @@ input::placeholder {
     border-bottom: none;
 }
 
- .recentOrders table tbody tr:hover {
-    background: #2a2185;
+.recentOrders table tbody tr:hover {
+    background: #be9c79;
     color: white;
 }
 
- .recentOrders table tr td {
+.recentOrders table tr td {
     padding: 10px;
 }
 
- .recentOrders table tr td:last-child {
+.recentOrders table tr td:last-child {
     text-align: end;
 }
 
- .recentOrders table tr td:nth-child(2) {
+.recentOrders table tr td:nth-child(2) {
     text-align: end;
 }
 
- .recentOrders table tr td:nth-child(3) {
+.recentOrders table tr td:nth-child(3) {
     text-align: center;
 }
 
@@ -340,4 +314,3 @@ input::placeholder {
     font-size: 14px;
     font-weight: 500;
 }
-

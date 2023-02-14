@@ -1,0 +1,59 @@
+.heading {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.heading img {
+    height: 4rem;
+    margin-bottom: 1rem;
+}
+
+.heading h3 {
+    font-size: 2.5rem;
+    color: black;
+    font-family: cursive;
+}
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #405065;
+}
+
+.search-prod {
+    position: relative;
+    max-width: 50%;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
+.form-control {
+    box-shadow: 0 10px 40px 0 #3d2a2a;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 10;
+    right: 4%;
+    top: 3%;
+}
+
+.btn-shop {
+    position: absolute;
+    z-index: 10;
+    right: -12%;
+    top: -10%;
+}
+.example-card {
+    max-width: 300px;
+    margin: 15px;
+    padding: 10px;
+}
+
+mat-card img{
+    transition: 0.3s ease-in-out;
+}
+mat-card img:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}

@@ -8,7 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -22,6 +24,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle'
     MatRadioModule,
     MatToolbarModule,
     MatButtonToggleModule,
+    MatTableModule,
+    MatProgressBarModule,
   ],
   exports: [
     MatInputModule,
@@ -34,6 +38,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle'
     MatRadioModule,
     MatToolbarModule,
     MatButtonToggleModule,
+    MatTableModule,
+    MatProgressBarModule,
   ],
 })
 export class MatrialModule {}

@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div fxLayout="column">
+    <mat-toolbar color="primary" fxFlex.gt-xs="100%" style="background-color: #be9c79;">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>coffee</mat-icon>
+        </button>
+        <span style="font-family: cursive">Coffee System</span>
+        <nav class="navbar">
+
+            <a fxLayoutAlign="center center" routerLink="/" routerLinkActive="active"><mat-icon>home</mat-icon> home</a>
+            <a fxLayoutAlign="center center" routerLink="" routerLinkActive="active"> <mat-icon>diamond</mat-icon>
+                about</a>
+            <a fxLayoutAlign="center center" routerLink="/products" routerLinkActive="active"><mat-icon>shop</mat-icon>
+                Products</a>
+            <a fxLayoutAlign="center center" routerLink="/contact"
+                routerLinkActive="active"><mat-icon>contacts</mat-icon> contact</a>
+        </nav>
+        <span class="example-spacer"></span>
+        <div fxHide.lt-md="true" fxLayoutAlign="center center">
+            <button *ngIf="isAuth" mat-icon-button routerLink="/profile" class="example-icon"
+                aria-label="Example icon-button with share icon">
+                <div class="user">
+                    <img src="assets\about-pic.jpg" alt="">
+                </div>
+            </button>
+        </div>
+        <button *ngIf="isAuth" mat-icon-button routerLink="/home" (click)="Logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+        <div *ngIf="!isAuth">
+            <button mat-icon-button routerLink="/login" (click)="Login()">
+                <mat-icon>login</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+</div>
