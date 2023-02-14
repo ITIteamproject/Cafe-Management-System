@@ -1,0 +1,76 @@
+section {
+    padding: 2rem 9%;
+    height: 93.5vh;
+}
+
+.contact .row1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contact .row1 .image {
+    flex: 1 1 30rem;
+}
+
+.contact .row1 .image img {
+    width: 100%;
+}
+
+.contact .row1 form {
+    flex: 1 1 30rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    background: #fff;
+    height: 70vh;
+}
+
+.contact .row1 form .inputBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact .row1 form .inputBox input,
+.contact .row1 form .box,
+.contact .row1 form textarea {
+    width: 100%;
+    border-radius: .5rem;
+    font-size: 1.1rem;
+    color: #333;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    text-transform: none;
+}
+
+.contact .row1 form .inputBox input:focus,
+.contact .row1 form .box:focus,
+.contact .row1 form textarea:focus {
+    border-color: #be9c79;
+}
+
+.contact .row1 form .inputBox input {
+    width: 49%;
+}
+
+.contact .row1 form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.btn {
+    display: inline-block;
+
+    background: #222;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #be9c79;
+    letter-spacing: .2rem;
+}
