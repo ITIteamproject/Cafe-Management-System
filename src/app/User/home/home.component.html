@@ -1,0 +1,43 @@
+<app-toolbar></app-toolbar>
+<!-- home section starts  -->
+
+<div class="body">
+    <!-- <div class="home-bg">
+
+        <section class="home" id="home">
+
+            <div class="content">
+                <h3>coffee heaven</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut officia, accusantium mollitia laudantium
+                    dolorum dolore.</p>
+                <a href="#about" class="btn">about us</a>
+            </div>
+
+        </section>
+
+    </div> -->
+
+    <section class="home" id="home">
+
+        <div class="row1">
+
+            <div class="content" >
+                <h3>fresh coffee in the morning</h3>
+                <a href="#" class="btn" routerLink="/products">buy one now</a>
+            </div>
+
+            <div class="image">
+                <img src="assets/home-img-{{x}}.png" class="main-home-image" alt="">
+            </div>
+
+        </div>
+
+        <div class="image-slider">
+            <img src="assets/home-img-1.png" (click)="x=1" alt="">
+            <img src="assets/home-img-2.png" (click)="x=2" alt="">
+            <img src="assets/home-img-3.png" (click)="x=3" alt="">
+        </div>
+
+    </section>
+</div>
+<!-- home section ends -->

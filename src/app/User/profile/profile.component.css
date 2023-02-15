@@ -1,0 +1,316 @@
+.backg {
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar img {
+    width: 50px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 65%;
+    padding-bottom: 3px;
+}
+
+input {
+
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+    border-radius: 7px;
+    border: 2px solid #c0bdbd;
+    padding: 10px;
+}
+
+input:focus {
+    outline: 0;
+    border-color: #be9c79;
+}
+
+input::placeholder {
+    font: 20px curse;
+    color: #be9c79;
+    font-weight: bold;
+}
+
+.container2 {
+    position: relative;
+
+    border-radius: 15px;
+    width: 95%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.5);
+
+}
+
+.container2 .left_side {
+    position: relative;
+    background-color: #be9c79;
+    padding: 35px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.container2 .right_side {
+    position: relative;
+    background-color: #fff;
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.profileText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.profileText .imgBx {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fbfcf9;
+}
+
+.profileText .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: x 1000ms forwards;
+    border-radius: 50%;
+
+}
+
+.profileText h2 {
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+}
+
+.Info {
+    padding-top: 40px;
+}
+
+.title {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.Info ul {
+    position: relative;
+}
+
+.Info ul li {
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.Info ul li .icon {
+
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+
+}
+
+.Info ul li span {
+    color: #fff;
+    font-weight: 300;
+
+}
+
+@keyframes x {
+    from {
+        scale: 0;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+
+
+.login-button {
+    margin-top: 20px;
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.name {
+    margin-top: 20px;
+
+    width: 100%;
+}
+
+.name mat-form-field {
+    margin-top: 20px;
+    width: 65%;
+}
+
+.tel,
+.email,
+.address,
+.pass,
+.repass,
+.name {
+    display: flex;
+    justify-content: center;
+
+}
+
+.address mat-form-field {
+    width: 65%;
+
+}
+
+.pass mat-form-field,
+.repass mat-form-field {
+    width: 65%;
+    margin-top: 30px;
+}
+
+
+
+.recentOrders {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: #be9c79;
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: #be9c79;
+    text-decoration: none;
+    color: white;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table thead td {
+    font-weight: 600;
+}
+
+.recentOrders table tr {
+    color: #222;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.recentOrders table tr:last-child {
+    border-bottom: none;
+}
+
+.recentOrders table tbody tr:hover {
+    background: #be9c79;
+    color: white;
+}
+
+.recentOrders table tr td {
+    padding: 10px;
+}
+
+.recentOrders table tr td:last-child {
+    text-align: end;
+}
+
+.recentOrders table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.recentOrders table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status.delivered {
+    padding: 2px 4px;
+    background: #8de02c;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.pending {
+    padding: 2px 4px;
+    background: #e9b10a;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.return {
+    padding: 2px 4px;
+    background: #f00;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status.inProgress {
+    padding: 2px 4px;
+    background: #1795ce;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
