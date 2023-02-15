@@ -9,8 +9,11 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  getUserInfo() {
-    return this.http.get(this.baseURL)
+  getUserInfo(token: any) {
+    const headers = new HttpHeaders({
+      'Authorization': token
+    })
+    return this.http.get(this.baseURL, { headers })
   }
 
 

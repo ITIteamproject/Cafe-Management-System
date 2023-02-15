@@ -7,18 +7,22 @@ import { ProfileService } from 'src/Services/profile.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit{
-  userInfo = [];
+  userInfo = {};
   token:any = localStorage.getItem('token');
-  constructor(private http: ProfileService) {}
+
+  constructor(private http: ProfileService) {
+
+  }
 
   ngOnInit(){
-    this.http.getUserInfo().subscribe({
+    console.log(this.token)
+    this.http.getUserInfo(this.token).subscribe({
       next: (res)=> {
         console.log(res)
+        this.userInfo = res
       },
       error: (err) => {
         console.log(err);
-        
       }
     })
   }
