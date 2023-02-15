@@ -30,6 +30,7 @@ export class SignupComponent implements OnInit {
       )
       .subscribe({
         next: (res) => {
+          localStorage.setItem('token', res['accessToken']);
           this.router.navigateByUrl('/home');
         },
       });
