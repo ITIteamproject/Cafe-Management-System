@@ -56,4 +56,11 @@ export class ProfileService {
     })
     return this.http.get(this.orderURL, { headers })
   }
+
+  cancelUserOrder(token: string, orderId: string) {
+    const headers = new HttpHeaders({
+      'Authorization': token
+    })
+    return this.http.delete(`${this.orderURL}/?orderId=${orderId}`, {headers})
+  }
 }

@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   message: string;
   userOrders: any;
   token: any = localStorage.getItem('token');
-  ordersColumns = ['name', 'price', 'status', 'cancel']
+  ordersColumns = ['name', 'price', 'status', 'amount', 'totalPrice', 'cancel']
 
   constructor(private http: ProfileService) { }
 
@@ -38,8 +38,16 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  cancelOrder() {
-    console.log('canceled')
+  cancelOrder(orderId: string) {
+    this.http.cancelUserOrder(this.token, orderId).subscribe({
+      next: res => {
+        console.log(res)
+        location.reload()
+      },
+      error: err => {
+        console.log(err)
+      }
+    })
   }
 
   ngOnInit() {
