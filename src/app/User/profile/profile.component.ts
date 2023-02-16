@@ -10,7 +10,11 @@ export class ProfileComponent implements OnInit {
   userInfo: any;
   userImage: any;
   imageFile: File;
+  gender: string;
+  message: string;
+  userOrders: any;
   token: any = localStorage.getItem('token');
+  ordersColumns = ['name', 'price', 'status', 'cancel']
 
   constructor(private http: ProfileService) { }
 
@@ -34,12 +38,15 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  cancelOrder() {
+    console.log('canceled')
+  }
+
   ngOnInit() {
 
     // get user info request
     this.http.getUserInfo(this.token).subscribe({
       next: (res) => {
-        console.log(res)
         this.userInfo = res
       },
       error: (err) => {
@@ -50,7 +57,6 @@ export class ProfileComponent implements OnInit {
     // get user image request
     this.http.getUserImage(this.token).subscribe({
       next: (res) => {
-        console.log(res);
         this.userImage = res['userImage']
       },
       error: (err) => {
@@ -58,7 +64,57 @@ export class ProfileComponent implements OnInit {
       }
     })
 
+    // get user orders
+    this.http.getUserOrders(this.token).subscribe({
+      next: res => {
+        this.userOrders = res;
+      },
+      error: err => {
+        console.log(err);
 
+      }
+    })
+  }
+
+  changePasswd(oldPassword, newPassword, repeatPassword): number {
+    if (newPassword !== repeatPassword) return -1;
+
+    const pw = {
+      oldPassword,
+      newPassword
+    }
+
+    this.http.changePassword(this.token, pw).subscribe({
+      next: (res) => {
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+
+    return 1;
+  }
+
+  genderChanged(val) {
+    this.gender = val;
+  }
+
+  changeInfo(username: string, email: string) {
+    const info = {
+      username,
+      email,
+      gender: this.gender
+    }
+
+    this.http.changeUserInfo(this.token, info).subscribe({
+      next: (res) => {
+        this.message = 'info updated successfully'
+      },
+      error: (err) => {
+        this.message = 'something went wrong'
+        console.log(err)
+      }
+    })
   }
 
 }
