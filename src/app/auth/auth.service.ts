@@ -7,11 +7,11 @@ import { Subject } from 'rxjs';
 })
 export class AuthService {
   private user: any;
-  authChange = new Subject<boolean>();
+  // authChange = new Subject<boolean>();
 
   constructor(private http: HttpClient) {}
   login(email: string, password: string) {
-    this.authChange.next(true);
+    // this.authChange.next(true);
     return this.http.post<any>('http://localhost:4500/reg/login', {
       email,
       password,
@@ -24,7 +24,7 @@ export class AuthService {
     repassword: string,
     gender: string
   ) {
-    this.authChange.next(true);
+    // this.authChange.next(true);
     return this.http.post('http://localhost:4500/reg/signup', {
       username,
       email,
@@ -33,7 +33,21 @@ export class AuthService {
       gender,
     });
   }
-  logOut() {
-    this.authChange.next(false);
+  checkAuth() {
+    if (localStorage.getItem('logged') == 'true')
+      return true;
+    else
+      return false;
+  }
+
+  Logout() {
+    
+    localStorage.setItem('logged', 'false');
+    // console.log(this.isAuth);
+  }
+  Login() {
+    
+    localStorage.setItem('logged', 'true');
+    // console.log(this.isAuth);
   }
 }

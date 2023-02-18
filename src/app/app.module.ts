@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +17,7 @@ import { CartComponent } from './User/Component-Products/cart/cart.component';
 import { ProductsComponent } from './User/Component-Products/products/products.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { MatchingDirective } from './matching.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     ContactUsComponent,
     CartComponent,
     ProductsComponent,
+    MatchingDirective,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

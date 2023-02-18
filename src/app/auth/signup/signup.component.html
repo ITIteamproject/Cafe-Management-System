@@ -1,7 +1,7 @@
 <div class="page" fxLayoutAlign="center center">
     <mat-card class="mat-elevation-z12" fxFlex.sm="80%" fxFlex.xs="100%">
         <mat-card-title style="text-align:center;" fxLayoutGap="10px">
-            <img src="assets\heading-img.png" alt="">
+            <img  src="assets\heading-img.png" alt="">
 
         </mat-card-title>
         <mat-tab-group mat-stretch-tabs animationDuration="400ms" color="primary">
@@ -61,35 +61,37 @@
                             <mat-error *ngIf="email.invalid">Email is Invalid</mat-error>
                             <mat-icon matSuffix>email</mat-icon>
                         </mat-form-field>
-                        <mat-form-field>
-                            <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" type="password" required minlength="6"
-                                name="password" ngModel #password="ngModel">
-                            <mat-error *ngIf="password.errors && password.hasError('required')">
-                                Password is required
-                            </mat-error>
-                            <mat-error *ngIf="password.errors && password.errors?.['minlength']">
-                                Password must be of length 6
-                            </mat-error>
-                            <mat-icon matSuffix>lock</mat-icon>
-                        </mat-form-field>
-                        <mat-form-field>
-                            <mat-label>Re-enter password</mat-label>
-                            <input matInput placeholder="Password" type="password" required minlength="6"
-                                name="repassword" ngModel #repassword="ngModel">
-                            <mat-error *ngIf="repassword.errors && repassword.hasError('required') ">
-                                Re-Enter Password is required
-                            </mat-error>
-                            <mat-error *ngIf="repassword.errors?.['minlength']">
-                                Password must be of length 6
-                            </mat-error>
-                            <mat-error *ngIf=" password.value != repassword.value ">
-                                password not matched
-                            </mat-error>
-                            <mat-icon matSuffix>lock</mat-icon>
-                        </mat-form-field>
+                        <div class="form-row" ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Password" type="password" required minlength="6"
+                                    name="password" ngModel #password="ngModel">
+                                <mat-error *ngIf="password.errors && password.hasError('required')">
+                                    Password is required
+                                </mat-error>
+                                <mat-error *ngIf="password.errors && password.errors?.['minlength']">
+                                    Password must be of length 6
+                                </mat-error>
+                                <mat-icon matSuffix>lock</mat-icon>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Re-enter password</mat-label>
+                                <input matInput placeholder="Password" type="password" required minlength="6"
+                                    name="repassword" ngModel #repassword="ngModel">
+                                <mat-error *ngIf="repassword.errors && repassword.hasError('required') ">
+                                    Re-Enter Password is required
+                                </mat-error>
+                                <mat-error *ngIf="repassword.errors?.['minlength']">
+                                    Password must be of length 6
+                                </mat-error>
+                                <mat-error
+                                    *ngIf=" passwords.errors?.passwordCheck && (repassword.dirty || repassword.touched)">
+                                    Passwords do not match.
+                                </mat-error>
+                                <mat-icon matSuffix>lock</mat-icon>
+                            </mat-form-field>
 
-
+                        </div>
 
 
                         <mat-radio-group aria-label="Select an option" name="gender" ngModel #gender="ngModel"

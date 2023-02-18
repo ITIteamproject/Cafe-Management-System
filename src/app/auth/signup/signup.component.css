@@ -10,12 +10,14 @@
     overflow: hidden;
     display: grid;
 }
-mat-card-title{
+
+mat-card-title {
     padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 mat-card {
     width: 30%;
     place-self: center;
@@ -43,17 +45,19 @@ mat-card-content {
 }
 
 mat-card-title span {
-   color: #2d0d0d;
-   font-family: cursive;
+    color: #2d0d0d;
+    font-family: cursive;
     font-size: xx-large;
-    
+
 }
 
-.male , .female , .remember{
+.male,
+.female,
+.remember {
     font-weight: bold;
     font-size: medium;
 }
-mat-checkbox img{
-    width: 20px;
-}
 
+mat-checkbox img {
+    width: 100%;
+}
