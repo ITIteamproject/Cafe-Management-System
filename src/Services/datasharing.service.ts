@@ -7,5 +7,5 @@ export class DatasharingService {
 
   constructor() { }
 
-  public userImage: string;
+  public userImage: string = 'http://localhost:3000/defProfileImage.png';
 }

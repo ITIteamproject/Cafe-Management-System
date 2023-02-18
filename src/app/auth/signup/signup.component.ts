@@ -10,6 +10,7 @@ import {
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DatasharingService } from 'src/Services/datasharing.service';
 
 @Component({
   selector: 'app-signup',
@@ -23,7 +24,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private serve: AuthService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    // private _datasharing:DatasharingService
   ) {}
   ngOnInit(): void {}
 
