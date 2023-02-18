@@ -18,8 +18,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupComponent implements OnInit {
   myForm: any;
-  password1 :any;
-  password2 :any;
+  password1: any;
+  password2: any;
   constructor(
     private serve: AuthService,
     private router: Router,
@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
 
   OnSubmit(f: NgForm) {
     const reg = f.value;
-
+    console.log(reg);
     this.serve
       .register(
         reg.username,
@@ -46,11 +46,11 @@ export class SignupComponent implements OnInit {
   }
   login(x: NgForm) {
     const y = x.value;
-    
+
     this.serve.login(y.email, y.password).subscribe((res) => {
       console.log(res);
       localStorage.setItem('token', res.accessToken);
-       localStorage.setItem('logged', 'true');
+      localStorage.setItem('logged', 'true');
       this.router.navigateByUrl('/home');
     });
   }
