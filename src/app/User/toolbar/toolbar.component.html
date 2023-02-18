@@ -20,18 +20,18 @@
         </nav>
         <span class="example-spacer"></span>
         <div fxHide.lt-md="true" fxLayoutAlign="center center">
-            <button *ngIf="isAuth" mat-icon-button routerLink="/profile" class="example-icon"
+            <button *ngIf="bool" mat-icon-button routerLink="/profile" class="example-icon"
                 aria-label="Example icon-button with share icon">
                 <div class="user">
                     <img [src]="this._datasharing.userImage" alt="">
                 </div>
             </button>
         </div>
-        <button *ngIf="isAuth" mat-icon-button routerLink="/home" (click)="Logout()">
+        <button *ngIf="bool" mat-icon-button routerLink="/home" (click)="Logout()">
             <mat-icon>logout</mat-icon>
         </button>
-        <div *ngIf="!isAuth">
-            <button mat-icon-button routerLink="/login" (click)="Login()">
+        <div *ngIf="!bool">
+            <button mat-icon-button routerLink="/login">
                 <mat-icon>login</mat-icon>
             </button>
         </div>

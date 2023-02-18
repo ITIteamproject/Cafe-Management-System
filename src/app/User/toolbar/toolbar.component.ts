@@ -9,23 +9,27 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ToolbarComponent implements OnInit {
   isAuth: any;
+  bool = false;
+
   constructor(private auth: AuthService, public _datasharing: DatasharingService) { }
+  
   ngOnInit(): void {
     this.isAuth = localStorage.getItem('logged');
-    localStorage.setItem('logged', 'false');
+    if (this.auth.checkAuth()) this.bool = true;
+    else this.bool = false;
+
+    // localStorage.setItem('logged', 'false');
     //console.log(this.isAuth);
     // this.auth.authChange.subscribe((res) => {
     //   this.isAuth = res;
     // });
   }
   Logout() {
-    this.isAuth = false;
+    this.bool = false;
     localStorage.setItem('logged', 'false');
-    console.log(this.isAuth);
   }
   Login() {
-    this.isAuth = true;
+    this.bool = true;
     localStorage.setItem('logged', 'true');
-    console.log(this.isAuth);
   }
 }
