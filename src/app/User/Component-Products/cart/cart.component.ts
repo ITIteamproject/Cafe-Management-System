@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/Services/cart.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class CartComponent implements OnInit {
   public product: any = [];
   public grandTotal!: number;
 
-  constructor(private cart: CartService) {}
+  constructor(private cart: CartService, private router: Router) {}
   ngOnInit(): void {
     this.cart.getProducts().subscribe((res) => {
       this.product = res;
@@ -22,5 +23,14 @@ export class CartComponent implements OnInit {
   }
   emptyCart() {
     this.cart.removeAll();
+  }
+  save() {
+    const x = this.product.map((id) => {
+      return id._id;
+    });
+    this.cart.saveOrders(x, localStorage.getItem('token')).subscribe((a) => {
+      console.log(a);
+      this.router.navigateByUrl('/profile');
+    });
   }
 }
