@@ -25,7 +25,6 @@ export class SignupComponent implements OnInit {
     private serve: AuthService,
     private router: Router,
     private http: HttpClient,
-    // private _datasharing:DatasharingService
   ) {}
   ngOnInit(): void {}
 
