@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatasharingService } from 'src/Services/datasharing.service';
 import { ProfileService } from 'src/Services/profile.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
   token: any = localStorage.getItem('token');
   ordersColumns = ['name', 'price', 'status', 'amount', 'totalPrice', 'cancel']
 
-  constructor(private http: ProfileService) { }
+  constructor(private http: ProfileService, private _datasharing: DatasharingService) { }
 
   onChange(event: any) {
     this.imageFile = event.target.files[0]
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.userImage = res['userImage']
+        this._datasharing.userImage = this.userImage
         location.reload()
       },
       error: (err) => {
@@ -66,6 +68,7 @@ export class ProfileComponent implements OnInit {
     this.http.getUserImage(this.token).subscribe({
       next: (res) => {
         this.userImage = res['userImage']
+        this._datasharing.userImage = this.userImage;
       },
       error: (err) => {
         console.log(err)

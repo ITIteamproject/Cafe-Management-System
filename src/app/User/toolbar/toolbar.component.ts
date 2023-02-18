@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatasharingService } from 'src/Services/datasharing.service';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ToolbarComponent implements OnInit {
   isAuth: any;
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, public _datasharing: DatasharingService) { }
   ngOnInit(): void {
     this.isAuth = localStorage.getItem('logged');
     localStorage.setItem('logged', 'false');

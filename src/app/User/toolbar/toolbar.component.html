@@ -23,7 +23,7 @@
             <button *ngIf="isAuth" mat-icon-button routerLink="/profile" class="example-icon"
                 aria-label="Example icon-button with share icon">
                 <div class="user">
-                    <img src="assets\about-pic.jpg" alt="">
+                    <img [src]="this._datasharing.userImage" alt="">
                 </div>
             </button>
         </div>
