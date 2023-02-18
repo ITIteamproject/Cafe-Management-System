@@ -41,6 +41,8 @@ export class SignupComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log('ok')
+          localStorage.setItem('token', res["accessToken"]);
+          localStorage.setItem('logged', 'true');
           this.router.navigateByUrl('/home');
         },
       });
