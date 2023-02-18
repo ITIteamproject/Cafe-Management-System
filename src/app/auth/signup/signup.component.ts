@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit {
       )
       .subscribe({
         next: (res) => {
+          console.log('ok')
           this.router.navigateByUrl('/home');
         },
       });
