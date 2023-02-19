@@ -3,7 +3,6 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { DatasharingService } from 'src/Services/datasharing.service';
 
 @Component({
   selector: 'app-signup',
