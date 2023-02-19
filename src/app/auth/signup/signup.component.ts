@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  NgForm,
-  Validators,
-  Validator,
-  ValidationErrors,
-  FormGroup,
-  NG_VALIDATORS,
-} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
