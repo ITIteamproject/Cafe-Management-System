@@ -1,11 +1,19 @@
 import { Injectable } from '@angular/core';
+import { ProfileService } from './profile.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DatasharingService {
-
-  constructor() { }
-
-  public userImage: string = 'http://localhost:3000/defProfileImage.png';
+  public userImage: string;
+  constructor(private http: ProfileService) {
+    this.http.getUserImage(localStorage.getItem('token')).subscribe({
+      next: (res) => {
+        this.userImage = res['userImage'];
+      },
+      error: err => {
+        console.log(err)
+      }
+    });
+  }
 }
