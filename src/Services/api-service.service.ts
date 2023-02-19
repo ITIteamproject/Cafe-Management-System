@@ -9,9 +9,10 @@ export class ApiServiceService {
   constructor(private http: HttpClient) {}
 
   getProduct() {
-    return this.http.get<any>('https://api.escuelajs.co/api/v1/products').pipe(
+    return this.http.get<any>('http://localhost:3000/api/products').pipe(
       map((res) => {
-        return res;
+        console.log(res.data);
+        return res.data;
       })
     );
   }

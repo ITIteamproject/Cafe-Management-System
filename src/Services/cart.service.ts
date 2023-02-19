@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -7,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getProducts() {
     return this.productList.asObservable();
@@ -20,7 +21,7 @@ export class CartService {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList);
+    
   }
 
   getTotalPrice(): number {
@@ -33,7 +34,7 @@ export class CartService {
 
   removeCart(product: any) {
     this.cartItemList.map((a: any, index: any) => {
-      if (product.id === a.id) {
+      if (product._id === a._id) {
         this.cartItemList.splice(index, 1);
       }
     });
@@ -42,6 +43,12 @@ export class CartService {
   removeAll() {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
-    this.productList.next(this.cartItemList);
+    // this.productList.next(this.cartItemList);
+  }
+  saveOrders(x: any , token:any) {
+    const headers = new HttpHeaders({
+      Authorization: token,
+    });
+    return this.http.post<any>('http://localhost:3000/purchase', x,{headers});
   }
 }

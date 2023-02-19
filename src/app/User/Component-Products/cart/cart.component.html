@@ -36,8 +36,8 @@
                         <tbody>
                             <tr *ngFor="let item of product; let i = index">
                                 <td>{{i+1}}</td>
-                                <td>{{item.title}}</td>
-                                <td><img style="width: 120px;" src="{{item.images}}" alt=""></td>
+                                <td>{{item.name}}</td>
+                                <td><img style="width: 120px;" src="{{item.photo}}" alt=""></td>
                                 <td style="width: 25%;">{{item.description}}</td>
                                 <th style="width: 12%;">{{item.price}}</th>
                                 <td style="width: 12%;">1</td>
@@ -51,8 +51,8 @@
                                 <td colspan="4"></td>
                                 <td><button (click)="emptyCart()" mat-raised-button color="warn">Empty Cart</button>
                                 </td>
-                                <td><button mat-raised-button color="primary">Shop More</button></td>
-                                <td><button mat-raised-button color="accent">Check Out</button></td>
+                                <td><button mat-raised-button color="primary" routerLink="/products">Shop More</button></td>
+                                <td><button mat-raised-button color="accent" (click)="save()" >Check Out</button></td>
                                 <td><strong>Grand Total: ${{grandTotal}}</strong></td>
                             </tr>
                         </tbody>
