@@ -8,7 +8,7 @@ import { CartService } from 'src/Services/cart.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  productList: any;
+  productList= [];
   searchVar: string = '';
   totalItem: number = 0;
   constructor(private api: ApiServiceService, private cart: CartService) {}
