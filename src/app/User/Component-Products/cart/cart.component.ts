@@ -31,6 +31,7 @@ export class CartComponent implements OnInit {
     this.cart.saveOrders(x, localStorage.getItem('token')).subscribe((a) => {
       console.log(a);
       this.router.navigateByUrl('/profile');
+      this.cart.removeAll();
     });
   }
 }

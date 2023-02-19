@@ -18,6 +18,7 @@ import { ProductsComponent } from './User/Component-Products/products/products.c
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { MatchingDirective } from './matching.directive';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatchingDirective } from './matching.directive';
     CartComponent,
     ProductsComponent,
     MatchingDirective,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
