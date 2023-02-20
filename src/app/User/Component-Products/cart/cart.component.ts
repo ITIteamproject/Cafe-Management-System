@@ -25,10 +25,8 @@ export class CartComponent implements OnInit {
     this.cart.removeAll();
   }
   save() {
-    const x = this.product.map((id) => {
-      return id._id;
-    });
-    this.cart.saveOrders(x, localStorage.getItem('token')).subscribe((a) => {
+    console.log(this.product);
+    this.cart.saveOrders(this.product, localStorage.getItem('token')).subscribe((a) => {
       console.log(a);
       this.router.navigateByUrl('/profile');
     });
