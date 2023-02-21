@@ -20,12 +20,11 @@
         </div>
     </div>
 
-
     <div class="container">
         <div class="row">
             <ng-container *ngFor="let item of productList | filter: searchVar">
                 <mat-card class="example-card">
-                    <img mat-card-image src="{{item.photo}}" alt="Photo of a Shiba Inu">
+                    <img mat-card-image src="{{ item.photo }}" alt="Photo of a Shiba Inu">
                     <mat-card-header>
                         <mat-card-title>{{item.name}}</mat-card-title>
                     </mat-card-header>
@@ -41,13 +40,8 @@
                             (click)="addToCart(item)">Add to cart</button>
 
                     </mat-card-actions>
-                    <mat-card-footer>
-                        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-                    </mat-card-footer>
                 </mat-card>
             </ng-container>
-
-
         </div>
     </div>
 </div>

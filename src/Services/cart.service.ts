@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
+  private ids = [];
   public cartItemList: any = [];
   public productList = new BehaviorSubject<any>([]);
   constructor(private http: HttpClient) {}
@@ -18,10 +19,19 @@ export class CartService {
     this.productList.next(product);
   }
   addtoCart(product: any) {
+    for (let i = 0; i < this.ids.length; i++) {
+      if (product._id == this.ids[i]) {
+        console.log('add 2 times');
+        console.log(product);
+        product.quantity += 1;
+        product.total += product.price;
+        return;
+      }
+    }
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
-    
+    this.ids.push(product._id);
   }
 
   getTotalPrice(): number {
@@ -43,12 +53,13 @@ export class CartService {
   removeAll() {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
-    // this.productList.next(this.cartItemList);
   }
-  saveOrders(x: any , token:any) {
+  saveOrders(x: any, token: any) {
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    return this.http.post<any>('http://localhost:3000/purchase', x,{headers});
+    return this.http.post<any>('http://localhost:3000/purchase', x, {
+      headers,
+    });
   }
 }
