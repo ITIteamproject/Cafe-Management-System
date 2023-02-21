@@ -88,9 +88,12 @@ section {
     display: inline-block;
     padding: .8rem 1.4 rem;
     border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
-    color: #443;
+    /* color: #443; */
+    color: beige;
+
     background: none;
-    border: .2rem solid #443;
+    border: .2rem solid beige;
+    /* border: .2rem solid #443; */
     cursor: pointer;
     margin-top: 1rem;
     font-size: 1.7rem;
@@ -98,13 +101,14 @@ section {
 
 .btn:hover {
     border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
-    border: .2rem dashed #443;
+    border: .2rem dashed beige;
+    /* border: .2rem dashed #443; */
 }
 
 .home {
     height: 93.7vh;
     padding-top: 13.5rem;
-    background: linear-gradient(90deg, #e2ccb4, transparent 70%), url("^assets/home-bg1.jpg") no-repeat;
+    background: linear-gradient(90deg, #e2ccb4, transparent 20%), url("^assets/home2.jpg") no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -145,7 +149,8 @@ section {
 
 .home .row1 .content h3 {
     font-size: 30px;
-    color: #443;
+    color: beige;
+    /* color: #443; */
     text-transform: uppercase;
     font-family: cursive;
 }
@@ -165,3 +170,9 @@ section {
 .home .image-slider img:hover {
     transform: translateY(-2rem);
 }
+
+/* @media screen and (max-width: 815px) {
+   .main-home-image{
+    display: none;
+   }
+  } */

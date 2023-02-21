@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , HostListener} from '@angular/core';
 import { DatasharingService } from 'src/Services/datasharing.service';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -23,6 +23,15 @@ export class ToolbarComponent implements OnInit {
     // this.auth.authChange.subscribe((res) => {
     //   this.isAuth = res;
     // });
+  }
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() { 
+    let element = document.querySelector('.navbar') as HTMLElement; 
+    if (window.pageYOffset > element.clientHeight) { 
+      element.classList.add('scroll'); 
+    } else { 
+      element.classList.remove('scroll'); 
+    } 
   }
   Logout() {
     this.bool = false;
