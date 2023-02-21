@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { ProductsComponent } from './User/Component-Products/products/products.c
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { MatchingDirective } from './matching.directive';
+import { FooterComponent } from './User/footer/footer.component';
+import { AboutComponent } from './User/about/about.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { MatchingDirective } from './matching.directive';
     CartComponent,
     ProductsComponent,
     MatchingDirective,
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +47,7 @@ import { MatchingDirective } from './matching.directive';
     HttpClientModule,
     Ng2SearchPipeModule,
     ReactiveFormsModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
