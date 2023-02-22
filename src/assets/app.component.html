@@ -1,15 +1,20 @@
-<app-toolbar></app-toolbar>
+<!-- <app-header></app-header>
 
+<div class="alert alert-info d-flex justify-content-center w-75 m-auto">
+  <router-outlet> </router-outlet>
+</div> -->
 <style>
   .img-hover-zoom {
-    height: 300px;
-    overflow: hidden;
+    height: 300px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
   }
 
+  /* [2] Transition property for smooth transformation of images */
   .img-hover-zoom img {
     transition: transform 0.5s ease;
   }
 
+  /* [3] Finally, transforming the image when container gets hovered */
   .img-hover-zoom:hover img {
     transform: scale(1.5);
   }
@@ -26,6 +31,10 @@
             class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light"
           >
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp"
+              class="h-100 w-100"
+            /> -->
             <div class="img-hover-zoom">
               <img
                 src="../assets/16GreatNewYorkCocoa.jpg"
@@ -65,6 +74,10 @@
             class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light"
           >
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+              class="h-100 w-100"
+            /> -->
             <div class="img-hover-zoom">
               <img src="../assets/20IceTea.jpg" class="h-100 w-100" />
             </div>
@@ -100,7 +113,10 @@
             <div class="img-hover-zoom">
               <img src="../assets/22Smoothies.jpg" class="h-100 w-100" />
             </div>
-
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/shoes%20(3).webp"
+              class="h-100 w-100"
+            /> -->
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
@@ -134,6 +150,10 @@
       <div class="col-lg-4 col-md-12 mb-4">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(23).webp"
+              class="h-100 w-100"
+            /> -->
             <div class="img-hover-zoom">
               <img src="../assets/10Pour-over.jpg" class="h-100 w-100" />
             </div>
@@ -171,6 +191,10 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp"
+              class="h-100 w-100"
+            /> -->
             <div class="img-hover-zoom">
               <img src="../assets/11Ice Late Classic.jpg" class="h-100 w-100" />
             </div>
@@ -211,7 +235,10 @@
             <div class="img-hover-zoom">
               <img src="../assets/3Latte.jpg" class="h-100 w-100" />
             </div>
-
+            <!-- <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(30).webp"
+              class="h-100 w-100"
+            /> -->
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
@@ -246,5 +273,3 @@
     </div>
   </div>
 </section>
-
-<app-footer></app-footer>
