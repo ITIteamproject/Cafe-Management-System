@@ -28,9 +28,9 @@ export class ToolbarComponent implements OnInit {
   onWindowScroll() { 
     let element = document.querySelector('.navbar') as HTMLElement; 
     if (window.pageYOffset > element.clientHeight) { 
-      element.classList.add('scroll'); 
+      element.classList.add('scrolled'); 
     } else { 
-      element.classList.remove('scroll'); 
+      element.classList.remove('scrolled'); 
     } 
   }
   Logout() {

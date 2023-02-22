@@ -1,7 +1,9 @@
-.footer{
-background-color: rgb(190, 156, 121);
+section{
+background-color: #432f22;
+color: white;
 }
 .icons{
-    font-size: 40px;
+    font-size: 30px;
     color: white;
 }
+

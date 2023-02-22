@@ -1,178 +1,79 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito:wght@200;300;400;500;600&display=swap');*/
 
-.body {
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-}
-
-*::selection {
-    background-color: #be9c79;
-    color: #FFF;
-}
-
-section {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    background-color: #be9c79;
-    cursor: pointer;
-    color: #FFF;
-    font-size: 20px;
-    padding: 10px 30px;
-}
-
-.btn:hover {
-    background-color: black;
-}
-
-.home-bg {
-    background: linear-gradient(90deg, #fff, transparent 70%), url("^assets/home-bg.jpg") no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.home-bg .home {
-    height: 45.7rem;
-    display: flex;
-    align-items: center;
-}
-
-.home-bg .home .content {
-    width: 30rem;
-    text-align: center;
-}
-
-.home-bg .home .content h3 {
-    font-size: 4rem;
-    color: black;
-    font-family: 'Merienda One', cursive;
-}
-
-.home-bg .home .content p {
-    padding: 1rem 0;
-    font-size: 1.3rem;
-    color: black;
-    line-height: 2;
-} */
-
-
-
-.body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: all .2s linear;
-}
 
 section {
     padding: 1.5rem 9%;
 }
 
-.btn {
+.homebtn {
     display: inline-block;
     padding: .8rem 1.4 rem;
     border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
-    /* color: #443; */
-    color: beige;
-
+    color: white;
     background: none;
-    border: .2rem solid beige;
-    /* border: .2rem solid #443; */
+    border: .2rem solid white;
     cursor: pointer;
     margin-top: 1rem;
     font-size: 1.7rem;
 }
-
-.btn:hover {
-    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
-    border: .2rem dashed beige;
-    /* border: .2rem dashed #443; */
-}
-
-.home {
-    height: 93.7vh;
-    padding-top: 13.5rem;
-    background: linear-gradient(90deg, #e2ccb4, transparent 20%), url("^assets/home2.jpg") no-repeat;
+.banner-image{
+    background-image: url('../../../assets/home2_50.jpg');
     background-size: cover;
-    background-position: center;
 }
-
-.home .row1 {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-}
-
-.home .row1 .content {
-    flex: 1 1 20rem;
-}
-
-.home .row1 .image {
-    flex: 1 1 20rem;
-    padding-top: 4rem;
-    text-align: center;
-}
-
-.home .row1 .image img {
-    height: 20rem;
-    animation: float 4s linear infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0rem);
-    }
-
-    50% {
-        transform: translateY(-7rem);
-    }
-}
-
-.home .row1 .content h3 {
+.content h3 {
     font-size: 30px;
-    color: beige;
-    /* color: #443; */
+    color: white;
     text-transform: uppercase;
     font-family: cursive;
 }
 
-.home .image-slider {
-    text-align: center;
-    padding: 1.5rem 0;
+.content a {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-family: cursive;
 }
 
-.home .image-slider img {
-    height: 5rem;
-    margin: 0 .4rem;
-    cursor: pointer;
-
+.homebtn:hover {
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    border: .2rem dashed white;
+    
 }
 
-.home .image-slider img:hover {
-    transform: translateY(-2rem);
+.btn {
+    background-color: #432f22;
+    color: white;
 }
 
-/* @media screen and (max-width: 815px) {
-   .main-home-image{
-    display: none;
-   }
-  } */
+
+.price {
+    text-decoration: line-through;
+    font-size: 25px;
+    color: red;
+}
+
+.disc {
+    font-size: 30px;
+    text-align: right;
+}
+
+.tit {
+    font-size: 20px;
+}
+
+.card:hover{
+    box-shadow: 5px 10px 18px #432f22;
+}
+
+@media screen and (max-width: 930px) {
+    .card-group{
+        display: block;
+        margin: auto;
+    }
+    .card{
+        width: 50%;
+    }
+}
+
+
+
