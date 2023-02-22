@@ -11,6 +11,11 @@
     display: grid;
 }
 
+.icon{
+    width: 40%;
+    border-radius: 50%;
+}
+
 mat-card-title {
     padding-top: 10px;
     display: flex;
@@ -45,7 +50,7 @@ mat-card-content {
 }
 
 mat-card-title span {
-    color: #2d0d0d;
+    color: #432f22;
     font-family: cursive;
     font-size: xx-large;
 
