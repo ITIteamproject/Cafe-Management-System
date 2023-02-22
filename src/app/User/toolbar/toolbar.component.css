@@ -65,9 +65,9 @@ input::placeholder {
     object-fit: cover;
 }
 
-/* .log{
+.log{
     color: #432f22;
-} */
+}
 
 .login{
     display: none;

@@ -15,10 +15,55 @@
   }
 </style>
 
+<div class="banner-image w-100 vh-100 d-flex align-items-center p-5">
+  <div class="text-left content m-5">
+    <h3>coffee is ready...</h3>
+    <a href="#" class="btn homebtn" style="background:none;" routerLink="/products">buy one now</a>
+  </div>
+</div>
+
+<!-- <div class="card-group p-5">
+  <div class="card m-5 d-flex align-items-center">
+    <img src="../../../assets/1.jpeg" class="card-img-top" alt="">
+    <div class="card-body">
+      <h2 class="card-title">Latte</h2>
+      <p class="card-text tit">Suspendisse varius enim in eros elementum tristique.</p>
+      <p class="card-text price">$2.99</p>
+      <p class="card-text disc">$2.00</p>
+    </div>
+    <div class="card-body">
+      <button type="button" class="btn" routerLink="/products" routerLinkActive="active">Check out</button>
+    </div>
+  </div>
+  <div class="card m-5 d-flex align-items-center">
+    <img src="../../../assets/2.jpeg" class="card-img-top" alt="">
+    <div class="card-body">
+      <h2 class="card-title">Caramel</h2>
+      <p class="card-text tit">Dolor sit amet, consectetur elit elementum tristique.</p>
+      <p class="card-text price">$3.35</p>
+      <p class="card-text disc">$2.35</p>
+    </div>
+    <div class="card-body">
+      <button type="button" class="btn" routerLink="/products" routerLinkActive="active">Check out</button>
+    </div>
+  </div>
+  <div class="card m-5 d-flex align-items-center">
+    <img src="../../../assets/3.jpeg" class="card-img-top" alt="">
+    <div class="card-body">
+      <h2 class="card-title">Flat White</h2>
+      <p class="card-text tit">Elit suspendisse varius enim in eros elementum tristique.</p>
+      <p class="card-text price">$3.00</p>
+      <p class="card-text disc">$2.20</p>
+    </div>
+    <div class="card-body">
+      <button type="button" class="btn" routerLink="/products" routerLinkActive="active">Check out</button>
+    </div>
+  </div>
+</div> -->
+
 <section style="background-color: #eee">
   <div class="text-center container py-5">
-    <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
-
+    <p class="mt-4 mb-5 best" style="color:#432f22">Bestsellers</p>
     <div class="row">
       <div class="col-lg-4 col-md-12 mb-4">
         <div class="card">
@@ -36,7 +81,7 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5><span class="badge bg-primary ms-2">New</span></h5>
+                  <h3><span class="badge bg-primary ms-2">New</span></h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -49,12 +94,12 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Great NewYork Cocoa</h5>
+              <h4 class="card-title mb-3">Great NewYork Cocoa</h4>
             </a>
             <a href="" class="text-reset">
               <p>Cold Drinks</p>
             </a>
-            <h6 class="mb-3">$61.99</h6>
+            <h4 class="mb-3">$61.99</h4>
           </div>
         </div>
       </div>
@@ -71,7 +116,7 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5><span class="badge bg-success ms-2">Eco</span></h5>
+                  <h3><span class="badge bg-success ms-2">Eco</span></h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -84,12 +129,12 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Mint Tea</h5>
+              <h4 class="card-title mb-3">Mint Tea</h4>
             </a>
             <a href="" class="text-reset">
               <p>Hot Drinks</p>
             </a>
-            <h6 class="mb-3">$61.99</h6>
+            <h4 class="mb-3">$61.99</h4>
           </div>
         </div>
       </div>
@@ -104,7 +149,7 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5><span class="badge bg-danger ms-2">-10%</span></h5>
+                  <h3><span class="badge bg-danger ms-2">-10%</span></h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -117,14 +162,14 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Smoothies</h5>
+              <h4 class="card-title mb-3">Smoothies</h4>
             </a>
             <a href="" class="text-reset">
               <p>Cold drinks</p>
             </a>
-            <h6 class="mb-3">
+            <h4 class="mb-3">
               <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-            </h6>
+            </h4>
           </div>
         </div>
       </div>
@@ -140,10 +185,10 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5>
+                  <h3>
                     <span class="badge bg-success ms-2">Eco</span
                     ><span class="badge bg-danger ms-2">-10%</span>
-                  </h5>
+                  </h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -156,14 +201,14 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Pour over</h5>
+              <h4 class="card-title mb-3">Pour over</h4>
             </a>
             <a href="" class="text-reset">
               <p>Hot Drinks</p>
             </a>
-            <h6 class="mb-3">
+            <h4 class="mb-3">
               <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-            </h6>
+            </h4>
           </div>
         </div>
       </div>
@@ -177,11 +222,11 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5>
+                  <h3>
                     <span class="badge bg-primary ms-2">New</span
                     ><span class="badge bg-success ms-2">Eco</span
                     ><span class="badge bg-danger ms-2">-10%</span>
-                  </h5>
+                  </h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -194,14 +239,14 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Ice Latee</h5>
+              <h4 class="card-title mb-3">Ice Latee</h4>
             </a>
             <a href="" class="text-reset">
               <p>Cold Drinks</p>
             </a>
-            <h6 class="mb-3">
+            <h4 class="mb-3">
               <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-            </h6>
+            </h4>
           </div>
         </div>
       </div>
@@ -215,11 +260,11 @@
             <a href="#!">
               <div class="mask">
                 <div class="d-flex justify-content-start align-items-end h-100">
-                  <h5>
+                  <h3>
                     <span class="badge bg-primary ms-2">New</span
                     ><span class="badge bg-success ms-2">Eco</span
                     ><span class="badge bg-danger ms-2">-10%</span>
-                  </h5>
+                  </h3>
                 </div>
               </div>
               <div class="hover-overlay">
@@ -232,14 +277,14 @@
           </div>
           <div class="card-body">
             <a href="" class="text-reset">
-              <h5 class="card-title mb-3">Cappuccino</h5>
+              <h4 class="card-title mb-3">Cappuccino</h4>
             </a>
             <a href="" class="text-reset">
               <p>Hot Drinks</p>
             </a>
-            <h6 class="mb-3">
+            <h4 class="mb-3">
               <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
-            </h6>
+            </h4>
           </div>
         </div>
       </div>
