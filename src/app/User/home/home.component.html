@@ -1,43 +1,250 @@
 <app-toolbar></app-toolbar>
-<!-- home section starts  -->
 
-<div class="body">
-    <!-- <div class="home-bg">
+<style>
+  .img-hover-zoom {
+    height: 300px;
+    overflow: hidden;
+  }
 
-        <section class="home" id="home">
+  .img-hover-zoom img {
+    transition: transform 0.5s ease;
+  }
 
-            <div class="content">
-                <h3>coffee heaven</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut officia, accusantium mollitia laudantium
-                    dolorum dolore.</p>
-                <a href="#about" class="btn">about us</a>
+  .img-hover-zoom:hover img {
+    transform: scale(1.5);
+  }
+</style>
+
+<section style="background-color: #eee">
+  <div class="text-center container py-5">
+    <h4 class="mt-4 mb-5"><strong>Bestsellers</strong></h4>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div
+            class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+            data-mdb-ripple-color="light"
+          >
+            <div class="img-hover-zoom">
+              <img
+                src="../assets/16GreatNewYorkCocoa.jpg"
+                class="h-100 w-100"
+              />
             </div>
 
-        </section>
-
-    </div> -->
-
-    <section class="home" id="home">
-
-        <div class="row1">
-
-            <div class="content" >
-                <h3>fresh coffee in the morning</h3>
-                <a href="#" class="btn" routerLink="/products">buy one now</a>
-            </div>
-
-            <div class="image">
-                <img src="assets/home-img-{{x}}.png" class="main-home-image" alt="">
-            </div>
-
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5><span class="badge bg-primary ms-2">New</span></h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Great NewYork Cocoa</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Cold Drinks</p>
+            </a>
+            <h6 class="mb-3">$61.99</h6>
+          </div>
         </div>
+      </div>
 
-        <div class="image-slider">
-            <img src="assets/home-img-1.png" (click)="x=1" alt="">
-            <img src="assets/home-img-2.png" (click)="x=2" alt="">
-            <img src="assets/home-img-3.png" (click)="x=3" alt="">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div
+            class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+            data-mdb-ripple-color="light"
+          >
+            <div class="img-hover-zoom">
+              <img src="../assets/20IceTea.jpg" class="h-100 w-100" />
+            </div>
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5><span class="badge bg-success ms-2">Eco</span></h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Mint Tea</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Hot Drinks</p>
+            </a>
+            <h6 class="mb-3">$61.99</h6>
+          </div>
         </div>
+      </div>
 
-    </section>
-</div>
-<!-- home section ends -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <div class="img-hover-zoom">
+              <img src="../assets/22Smoothies.jpg" class="h-100 w-100" />
+            </div>
+
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5><span class="badge bg-danger ms-2">-10%</span></h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Smoothies</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Cold drinks</p>
+            </a>
+            <h6 class="mb-3">
+              <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <div class="img-hover-zoom">
+              <img src="../assets/10Pour-over.jpg" class="h-100 w-100" />
+            </div>
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5>
+                    <span class="badge bg-success ms-2">Eco</span
+                    ><span class="badge bg-danger ms-2">-10%</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Pour over</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Hot Drinks</p>
+            </a>
+            <h6 class="mb-3">
+              <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <div class="img-hover-zoom">
+              <img src="../assets/11Ice Late Classic.jpg" class="h-100 w-100" />
+            </div>
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5>
+                    <span class="badge bg-primary ms-2">New</span
+                    ><span class="badge bg-success ms-2">Eco</span
+                    ><span class="badge bg-danger ms-2">-10%</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Ice Latee</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Cold Drinks</p>
+            </a>
+            <h6 class="mb-3">
+              <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <div class="img-hover-zoom">
+              <img src="../assets/3Latte.jpg" class="h-100 w-100" />
+            </div>
+
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5>
+                    <span class="badge bg-primary ms-2">New</span
+                    ><span class="badge bg-success ms-2">Eco</span
+                    ><span class="badge bg-danger ms-2">-10%</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="hover-overlay">
+                <div
+                  class="mask"
+                  style="background-color: rgba(251, 251, 251, 0.15)"
+                ></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+            <a href="" class="text-reset">
+              <h5 class="card-title mb-3">Cappuccino</h5>
+            </a>
+            <a href="" class="text-reset">
+              <p>Hot Drinks</p>
+            </a>
+            <h6 class="mb-3">
+              <s>$61.99</s><strong class="ms-2 text-danger">$50.99</strong>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>
