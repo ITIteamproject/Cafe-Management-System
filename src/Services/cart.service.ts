@@ -14,9 +14,12 @@ export class CartService {
   getProducts() {
     return this.productList.asObservable();
   }
-  setProduct(product: any) {
-    this.cartItemList.push(...product);
-    this.productList.next(product);
+  // setProduct(product: any) {
+  //   this.cartItemList.push(...product);
+  //   this.productList.next(product);
+  // }
+  getItemCart(){
+    return this.cartItemList.length;
   }
   addtoCart(product: any) {
     for (let i = 0; i < this.ids.length; i++) {
