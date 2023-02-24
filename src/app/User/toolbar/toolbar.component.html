@@ -5,7 +5,9 @@
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3 navbar-default">
             <div class="container">
+                <!-- <img src="../../../assets/log.png" style="width:100px"> -->
                 <a class="navbar-brand link" href="#" style="font-family: cursive; font-size: 1.6rem;">Coffee System</a>
+                <!-- <i class="las la-coffee"></i> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,11 +31,11 @@
                                 routerLinkActive="active">Contact</a>
                         </li>
                         <li class="nav-item login">
-                            <a class="nav-link text-white" href="#" routerLink="/login"
+                            <a *ngIf="!bool" class="nav-link text-white" href="#" routerLink="/login"
                                 routerLinkActive="active">Registration</a>
                         </li>
                         <li class="nav-item logout">
-                            <a class="nav-link text-white" href="#" routerLink="/home" (click)="Logout()"
+                            <a *ngIf="bool" class="nav-link text-white" href="#" routerLink="/home" (click)="Logout()"
                                 routerLinkActive="active">Logout</a>
                         </li>
                     </ul>

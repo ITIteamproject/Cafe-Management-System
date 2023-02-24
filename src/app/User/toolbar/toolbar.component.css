@@ -38,13 +38,13 @@ input::placeholder {
     text-transform: capitalize;
 }
 
-.navbar-default{
+/* .navbar-default{
     transition:800ms ease;
     background:transparent;
   }
 .navbar-default.scrolled{
     background:#432f22;
-  }
+  } */
 
 .user {
     position: relative;
@@ -65,9 +65,14 @@ input::placeholder {
     object-fit: cover;
 }
 
-/* .log{
+.navbar {
+    background-color:#432f22;
+    height:70px
+}
+
+.log{
     color: #432f22;
-} */
+}
 
 .login{
     display: none;
@@ -76,6 +81,11 @@ input::placeholder {
     flex: 1 1 100%;
     box-sizing: border-box;
     max-height: 100%;
+}
+
+.la-coffee{
+    color: white;
+    font-size:30px;
 }
 /* .logoutbtn{
     display:inline-block;
