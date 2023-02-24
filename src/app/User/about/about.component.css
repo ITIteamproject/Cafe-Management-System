@@ -1,16 +1,16 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,300&display=swap'); */
-
 .para{
     /* font-family: 'Shantell Sans'; */
     text-align:left;
     font-size:18px;
     line-height:30px;
     font-family: cursive;
+    max-width: 500px;
 }
+
 h3{
     font-size: 2rem;
     color: white;
     font-family: cursive;
-
 }
