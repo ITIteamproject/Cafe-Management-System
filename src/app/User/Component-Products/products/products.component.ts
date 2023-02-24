@@ -15,6 +15,7 @@ export class ProductsComponent implements OnInit {
   totalItem: number = 0;
   constructor(private api: ApiServiceService, private cart: CartService) {}
   ngOnInit(): void {
+    this.totalItem = this.cart.getItemCart();
     this.api.getProduct().subscribe((res) => {
       this.productList = res;
       this.productList.forEach((element: any) => {
