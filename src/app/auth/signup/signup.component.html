@@ -1,11 +1,12 @@
-<!-- <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white h-100"
-    style="background: url('../../../assets/aboutBG.jpeg');"> -->
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white vh-100"
+    style="background: url('../../../assets/aboutBG.jpeg');">
     <div class="page" fxLayoutAlign="center center">
         <mat-card class="mat-elevation-z12" fxFlex.sm="80%" fxFlex.xs="100%">
             <mat-card-title style="text-align:center;" fxLayoutGap="10px">
-                <img src="../../../assets/icon3.jpeg" alt="" class="icon">
+                <img src="../../../assets/icon3.jpg" alt="" class="icon">
+
             </mat-card-title>
-            <mat-tab-group mat-stretch-tabs animationDuration="400ms" color="primary">
+            <mat-tab-group mat-stretch-tabs animationDuration="400ms">
                 <mat-tab label="Sign In">
                     <mat-card-content>
                         <form #log="ngForm" (ngSubmit)="login(log)">
