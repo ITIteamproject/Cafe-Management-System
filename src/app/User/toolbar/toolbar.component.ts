@@ -24,15 +24,15 @@ export class ToolbarComponent implements OnInit {
     //   this.isAuth = res;
     // });
   }
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll() { 
-    let element = document.querySelector('.navbar') as HTMLElement; 
-    if (window.pageYOffset > element.clientHeight) { 
-      element.classList.add('scrolled'); 
-    } else { 
-      element.classList.remove('scrolled'); 
-    } 
-  }
+  // @HostListener('window:scroll', ['$event'])
+  // onWindowScroll() { 
+  //   let element = document.querySelector('.navbar') as HTMLElement; 
+  //   if (window.pageYOffset > element.clientHeight) { 
+  //     element.classList.add('scrolled'); 
+  //   } else { 
+  //     element.classList.remove('scrolled'); 
+  //   } 
+  // }
   Logout() {
     this.bool = false;
     localStorage.setItem('logged', 'false');

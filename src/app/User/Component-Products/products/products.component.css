@@ -3,6 +3,11 @@
     margin-top: 3rem;
 }
 
+.body {
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
 .heading img {
     height: 4rem;
     margin-bottom: 1rem;
@@ -57,3 +62,9 @@ mat-card img:hover{
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
 }
+
+/* @media screen and (max-width: ) {
+    .btn-shop {
+        display:none;
+    }
+} */

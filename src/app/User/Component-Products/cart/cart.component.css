@@ -4,6 +4,11 @@
     padding: 25px;
 }
 
+.sec {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
 .center{
     position: absolute;
     top: 35%;
