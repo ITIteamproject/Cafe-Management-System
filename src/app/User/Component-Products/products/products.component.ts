@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/Services/api-service.service';
 import { CartService } from 'src/Services/cart.service';
 
+
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -15,7 +17,6 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.api.getProduct().subscribe((res) => {
       this.productList = res;
-      this.totalItem = res.length;
       this.productList.forEach((element: any) => {
         Object.assign(element, { quantity: 1, total: element.price });
       });
@@ -23,5 +24,7 @@ export class ProductsComponent implements OnInit {
   }
   addToCart(item: any) {
     this.cart.addtoCart(item);
+    this.totalItem = this.cart.getItemCart();
+
   }
 }

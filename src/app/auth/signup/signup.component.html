@@ -1,9 +1,9 @@
 <div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white vh-100"
-    style="background: url('../../../assets/aboutBG.jpeg');">
+    style="background: url('../../../assets/008.jpg');">
     <div class="page" fxLayoutAlign="center center">
         <mat-card class="mat-elevation-z12" fxFlex.sm="80%" fxFlex.xs="100%">
             <mat-card-title style="text-align:center;" fxLayoutGap="10px">
-                <img src="../../../assets/icon3.jpg" alt="" class="icon">
+                <img src="../../../assets/SLicon.jpeg" alt="" class="icon">
 
             </mat-card-title>
             <mat-tab-group mat-stretch-tabs animationDuration="400ms">
@@ -16,7 +16,7 @@
                                     #email="ngModel">
                                 <mat-error *ngIf="email.errors?.['required']">Email is required</mat-error>
                                 <mat-error *ngIf="email.invalid">Email is Invalid</mat-error>
-                                <mat-icon matSuffix>email</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">email</mat-icon>
                             </mat-form-field>
                             <mat-form-field>
                                 <mat-label>Password</mat-label>
@@ -28,10 +28,10 @@
                                 <mat-error *ngIf="password.errors && password.errors?.['minlength']">
                                     Password must be of length 6
                                 </mat-error>
-                                <mat-icon matSuffix>lock</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">lock</mat-icon>
                             </mat-form-field>
-                            <mat-checkbox color="primary" name="Remember"><span class="remember">Remember Me!
-                                </span></mat-checkbox>
+                            <!-- <mat-checkbox color="primary" name="Remember"><span class="remember">Remember Me!
+                                </span></mat-checkbox> -->
                             <button mat-raised-button style="background-color: #432f22;" class="login-button">
                                 <span style="color: white;">Sign In</span>
                             </button>
@@ -50,7 +50,7 @@
 
                                 <input matInput placeholder="User Name" required name="username" ngModel
                                     #username="ngModel">
-                                <mat-icon matSuffix>perm_identity</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">perm_identity</mat-icon>
                                 <mat-error *ngIf="username.invalid">
                                     Username is required
                                 </mat-error>
@@ -63,7 +63,7 @@
                                 <mat-error *ngIf="email.hasError('required') && !email.dirty">Email is
                                     required</mat-error>
                                 <mat-error *ngIf="email.invalid">Email is Invalid</mat-error>
-                                <mat-icon matSuffix>email</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">email</mat-icon>
                             </mat-form-field>
 
                             <mat-form-field>
@@ -76,7 +76,7 @@
                                 <mat-error *ngIf="password.errors && password.errors?.['minlength']">
                                     Password must be of length 6
                                 </mat-error>
-                                <mat-icon matSuffix>lock</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">lock</mat-icon>
                             </mat-form-field>
                             <mat-form-field>
                                 <mat-label>Re-enter password</mat-label>
@@ -89,7 +89,7 @@
                                     Password must be of length 6
                                 </mat-error>
 
-                                <mat-icon matSuffix>lock</mat-icon>
+                                <mat-icon matSuffix style="color: #432f22;">lock</mat-icon>
                             </mat-form-field>
 
                             <mat-radio-group aria-label="Select an option" name="gender" ngModel #gender="ngModel"

@@ -1,9 +1,10 @@
+<!-- <app-toolbar [color]=""></app-toolbar> -->
 <app-toolbar></app-toolbar>
 
 <div class="body">
     <div class="heading">
-        <img src="assets/heading-img.png" alt="">
-        <h3 style="color:#432f22">our Products</h3>
+        <img src="../../../../assets/prodIcon.png" alt="">
+        <h3 style="color:#432f22; display: inline;">PRODUCTS</h3>
     </div>
 
     <div class="container">
@@ -21,7 +22,8 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row" fxLayoutAlign="center center">
+            
             <ng-container *ngFor="let item of productList | filter: searchVar">
                 <mat-card class="example-card">
                     <img mat-card-image src="{{ item.photo }}" alt="Photo of a Shiba Inu">

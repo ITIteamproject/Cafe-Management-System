@@ -37,7 +37,7 @@ input {
     border-radius: 7px;
     border: 2px solid #c0bdbd;
     padding: 10px;
-    background-color:#be9c79; 
+    /* background-color:#be9c79;  */
     color: white;
 }
 
@@ -171,13 +171,12 @@ input::placeholder {
     }
 }
 
-
-
 .login-button {
     margin-top: 20px;
     display: block;
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
+    border-radius: 5px;
 }
 
 .name {
@@ -324,4 +323,7 @@ table thead td {
 .gender-radio {
     display: flex;
     justify-content: center;
+}
+.finp{
+    background-color: #be9c79;
 }

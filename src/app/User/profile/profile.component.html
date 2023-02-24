@@ -11,10 +11,10 @@
                     <img [src]="userImage" alt="">
                 </div>
                 <h2>{{userInfo?.username}}</h2>
-                <h4 style="color: white; font-weight: bold;">{{userInfo?.email}} </h4>
+                <h4 style="color: white;">{{userInfo?.email}} </h4>
                 <form>
-                    <input type="file" id="myFile" name="userImage" class="w-100" style="display:block;" (change)="onChange($event)">
-                    <input type="button" value="Change" class="mt-3 change" (click)="changeUserImage()">
+                    <input type="file" id="myFile" name="userImage" class="w-100 finp" style="display:block;" (change)="onChange($event)">
+                    <input type="button" value="Change" class="mt-3 change finp" (click)="changeUserImage()">
                 </form>
             </div>
             <div class="Info">
@@ -237,7 +237,7 @@
                             </mat-form-field>
                         </div>
                         <button (click)="changePasswd(password.value, passwordn.value, repassword.value)"
-                            mat-raised-button style="background-color: #be9c79; color: white; font-size: 1.5rem;"
+                            mat-raised-button style="background-color: #432f22; color: white; font-size: 1.5rem;"
                             class="login-button">
                             Save
                         </button>
@@ -289,7 +289,7 @@
                         </mat-radio-group>
 
                         <button (click)="changeInfo(username.value, email.value)" mat-raised-button
-                            style="background-color: #be9c79; color: white; font-size: 1.5rem;" class="login-button">
+                            style="background-color: #432f22; color: white; font-size: 1.5rem;" class="login-button">
                             Save
                         </button>
                     </form>
