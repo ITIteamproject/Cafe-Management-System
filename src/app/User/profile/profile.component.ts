@@ -15,76 +15,75 @@ export class ProfileComponent implements OnInit {
   message: string;
   userOrders: any;
   token: any = localStorage.getItem('token');
-  ordersColumns = ['name', 'price', 'status', 'amount', 'totalPrice', 'cancel']
+  ordersColumns = ['name', 'price', 'status', 'amount', 'totalPrice', 'cancel'];
 
-  constructor(private http: ProfileService, private _datasharing: DatasharingService) { }
+  constructor(
+    private http: ProfileService,
+    private _datasharing: DatasharingService
+  ) {}
 
   onChange(event: any) {
-    this.imageFile = event.target.files[0]
-    console.log(this.imageFile)
+    this.imageFile = event.target.files[0];
+    console.log(this.imageFile);
   }
 
   changeUserImage() {
-
-    this.http.updateUserImage(this.token, this.imageFile).subscribe({ //
+    this.http.updateUserImage(this.token, this.imageFile).subscribe({
       next: (res) => {
         console.log(res);
-        this.userImage = res['userImage']
-        this._datasharing.userImage = this.userImage
-        location.reload()
+        this.userImage = res['userImage'];
+        this._datasharing.userImage = this.userImage;
       },
       error: (err) => {
-        console.log(err)
-      }
-    })
-
+        console.log(err);
+      },
+    });
   }
 
   cancelOrder(orderId: string) {
     this.http.cancelUserOrder(this.token, orderId).subscribe({
-      next: res => {
-        console.log(res)
-        location.reload()
-      },
-      error: err => {
-        console.log(err)
-      }
-    })
-  }
-
-  ngOnInit() {
-
-    // get user info request
-    this.http.getUserInfo(this.token).subscribe({
       next: (res) => {
-        this.userInfo = res
+        console.log(res);
+        // instead of reload the whole page
+        this.userOrders = res;
       },
       error: (err) => {
         console.log(err);
-      }
-    })
+      },
+    });
+  }
+
+  ngOnInit() {
+    // get user info request
+    this.http.getUserInfo(this.token).subscribe({
+      next: (res) => {
+        this.userInfo = res;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
 
     // get user image request
     this.http.getUserImage(this.token).subscribe({
       next: (res) => {
-        this.userImage = res['userImage']
+        this.userImage = res['userImage'];
         this._datasharing.userImage = this.userImage;
       },
       error: (err) => {
-        console.log(err)
-      }
-    })
+        console.log(err);
+      },
+    });
 
     // get user orders
     this.http.getUserOrders(this.token).subscribe({
-      next: res => {
+      next: (res) => {
         this.userOrders = res;
       },
-      error: err => {
+      error: (err) => {
         console.log(err);
-
-      }
-    })
+      },
+    });
   }
 
   changePasswd(oldPassword, newPassword, repeatPassword): number {
@@ -92,16 +91,15 @@ export class ProfileComponent implements OnInit {
 
     const pw = {
       oldPassword,
-      newPassword
-    }
+      newPassword,
+    };
 
     this.http.changePassword(this.token, pw).subscribe({
-      next: (res) => {
-      },
+      next: (res) => {},
       error: (err) => {
-        console.log(err)
-      }
-    })
+        console.log(err);
+      },
+    });
 
     return 1;
   }
@@ -114,18 +112,17 @@ export class ProfileComponent implements OnInit {
     const info = {
       username,
       email,
-      gender: this.gender
-    }
+      gender: this.gender,
+    };
 
     this.http.changeUserInfo(this.token, info).subscribe({
       next: (res) => {
-        this.message = 'info updated successfully'
+        this.message = 'info updated successfully';
       },
       error: (err) => {
-        this.message = 'something went wrong'
-        console.log(err)
-      }
-    })
+        this.message = 'something went wrong';
+        console.log(err);
+      },
+    });
   }
-
 }
