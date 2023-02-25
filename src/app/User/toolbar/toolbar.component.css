@@ -41,7 +41,7 @@ input::placeholder {
 }
 
 .navbar-default{
-    transition:800ms ease;
+    transition:500ms ease;
     background:transparent;
   }
 .navbar-default.scrolled{

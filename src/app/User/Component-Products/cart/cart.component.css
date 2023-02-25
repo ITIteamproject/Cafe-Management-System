@@ -1,3 +1,12 @@
+/* .nav{
+    background-color: #432f22;
+    height: 88px;
+} */
+
+.container{
+    margin-top: 150px;
+}
+
 .card{
     height: 60vh;
     margin: 25px;
@@ -23,5 +32,6 @@
     color: inherit;
     border: none;
     outline: none;
+    margin-top: 150px !important;
     margin: 20px 0;
 }
