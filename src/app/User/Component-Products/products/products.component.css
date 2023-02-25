@@ -22,13 +22,13 @@
 
 .search-prod {
     position: relative;
-    max-width: 50%;
+    max-width: 70%;
     padding-bottom: 50px;
     margin: auto;
 }
 
 .form-control {
-    box-shadow: 0 10px 40px 0 #3d2a2a;
+    box-shadow: 0 10px 25px 0 #3d2a2a;
 }
 
 .search-icon {
@@ -41,19 +41,45 @@
 .btn-shop {
     position: absolute;
     z-index: 10;
-    right: -12%;
+    right: -14%;
     top: -10%;
 }
+
 .example-card {
     max-width: 300px;
     margin: 15px;
     padding: 10px;
 }
 
-mat-card img{
+mat-card img {
     transition: 0.3s ease-in-out;
 }
-mat-card img:hover{
+
+mat-card img:hover {
     transition: 0.3s ease-in-out;
     transform: scale(1.1);
+}
+
+@media (max-width:991px) {
+    .btn-shop {
+        position: absolute;
+        z-index: 10;
+        right: -20%;
+        top: -10%;
+    }
+}
+
+@media (max-width:767px) {
+    .btn-shop {
+        position: absolute;
+        z-index: 10;
+        right: -30%;
+        top: -10%;
+    }
+
+    .search-icon {
+        display: none;
+    }
+
+    
 }

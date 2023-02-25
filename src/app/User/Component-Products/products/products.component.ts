@@ -8,20 +8,24 @@ import { CartService } from 'src/Services/cart.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  productList= [];
+  productList = [];
+
   searchVar: string = '';
   totalItem: number = 0;
   constructor(private api: ApiServiceService, private cart: CartService) {}
   ngOnInit(): void {
     this.api.getProduct().subscribe((res) => {
       this.productList = res;
-      this.totalItem = res.length;
+      this.totalItem = this.cart.getItemCart();
+
       this.productList.forEach((element: any) => {
         Object.assign(element, { quantity: 1, total: element.price });
+        // this.cart.getItemCart();
       });
     });
   }
   addToCart(item: any) {
     this.cart.addtoCart(item);
+    this.totalItem = this.cart.getItemCart();
   }
 }
