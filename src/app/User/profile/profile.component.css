@@ -1,3 +1,8 @@
+.nav{
+    background-color: #432f22;
+    height: 88px;
+}
+
 .backg {
   display: flex;
   justify-content: center;
