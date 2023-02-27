@@ -20,27 +20,26 @@ export class CartService {
   //   this.cartItemList.push(...product);
   //   this.productList.next(product);
   // }
-<<<<<<< HEAD
-  getItemCart(){
+  getItemCart() {
     return this.cartItemList.length;
   }
+  // <<<<<<< HEAD
+  //   addtoCart(product: any) {
+  //     for (let i = 0; i < this.ids.length; i++) {
+  //       if (product._id == this.ids[i]) {
+  //         console.log('add 2 times');
+  //         console.log(product);
+  //         product.quantity += 1;
+  //         product.total += product.price;
+  //         return;
+  //       }
+  //     }
+  //     this.cartItemList.push(product);
+  //     this.productList.next(this.cartItemList);
+  //     this.getTotalPrice();
+  //     this.ids.push(product._id);
+  // =======
   addtoCart(product: any) {
-    for (let i = 0; i < this.ids.length; i++) {
-      if (product._id == this.ids[i]) {
-        console.log('add 2 times');
-        console.log(product);
-        product.quantity += 1;
-        product.total += product.price;
-        return;
-      }
-    }
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    this.ids.push(product._id);
-=======
-  addtoCart(product: any) {
-    
     this.cartItemList.map((a: any, index: any) => {
       if (product._id === a._id) {
         this.bool = true;
@@ -54,10 +53,6 @@ export class CartService {
 
     this.productList.next(this.cartItemList);
     //this.getTotalPrice();
-  }
-  getItemCart() {
-    return this.cartItemList.length;
->>>>>>> tefa
   }
 
   // getTotalPrice(): number {
