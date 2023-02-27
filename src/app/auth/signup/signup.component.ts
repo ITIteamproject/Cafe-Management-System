@@ -10,9 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  myForm: any;
-  password1: any;
-  password2: any;
+
   constructor(
     private serve: AuthService,
     private router: Router,
