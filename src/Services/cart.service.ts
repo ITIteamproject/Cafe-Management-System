@@ -20,7 +20,6 @@ export class CartService {
   //   this.productList.next(product);
   // }
   addtoCart(product: any) {
-    
     this.cartItemList.map((a: any, index: any) => {
       if (product._id === a._id) {
         this.bool = true;
@@ -60,12 +59,15 @@ export class CartService {
     this.productList.next(this.cartItemList);
     // this.productList.next(this.cartItemList);
   }
-  saveOrders(x: any, token: any) {
+  saveOrders(items: any, token: any) {
+    console.log(items);
+
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    return this.http.post<any>('http://localhost:3000/purchase', x, {
-      headers,
+    return this.http.post<any>('http://localhost:3000/purchase', items, {
+      headers
     });
+    
   }
 }
