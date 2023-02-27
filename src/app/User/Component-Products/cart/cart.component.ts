@@ -15,9 +15,9 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cart.getProducts().subscribe((res) => {
       this.product = res;
+      console.log(res);
     });
     this.grandTotal = this.getTotalPrice();
-    // console.log(this.product);
   }
   getTotalPrice(): number {
     let x = 0;
@@ -36,9 +36,13 @@ export class CartComponent implements OnInit {
     this.grandTotal = 0;
   }
   save() {
-    console.log(this.product);
-    this.cart.saveOrders(this.product, localStorage.getItem('token')).subscribe((a) => {
-      console.log(a);
+    const orderedItems = this.product.map((item) => {
+      console.log(item);
+      item.total = item.price * item.quantity;
+      return item;
+    });    
+    this.cart.saveOrders(orderedItems, localStorage.getItem('token')).subscribe((res) => {
+      console.log(res);
       this.router.navigateByUrl('/profile');
       this.cart.removeAll();
     });
@@ -46,46 +50,9 @@ export class CartComponent implements OnInit {
   addI(item: any) {
     item.quantity++;
      this.grandTotal = this.getTotalPrice();
-    // this.grandTotal = 0;
-    // this.product = this.product.map((res) => {
-    //   if (res._id == item._id) {
-    //     let quantity = ++res.quantity;
-    //     let price = quantity * res.price;
-    //     // console.log(price, res);
-    //     this.grandTotal += price;
-    //     return {
-    //       ...res,
-    //       quantity: quantity,
-    //       total: price,
-    //     };
-    //   } else {
-    //     this.grandTotal += res.price;
-    //     return res;
-    //   }
-    // });
-
-    // console.log(this.product);
   }
   removeI(item: any) {
     if (item.quantity > 1) item.quantity--;
     this.grandTotal = this.getTotalPrice();
-    //   //  this.grandTotal = 0;
-    //   this.product = this.product.map((res) => {
-    //     if (res._id == item._id) {
-    //       let quantity = --res.quantity;
-    //       let price = quantity * res.price;
-    //       // console.log(price, res);
-    //       this.grandTotal -= price;
-    //       return {
-    //         ...res,
-    //         quantity: quantity,
-    //         total: price,
-    //       };
-    //     } else {
-    //       this.grandTotal -= res.price;
-    //       return res;
-    //     }
-    //   });
-    //}
   }
 }

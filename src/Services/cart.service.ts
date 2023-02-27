@@ -75,12 +75,15 @@ export class CartService {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
   }
-  saveOrders(x: any, token: any) {
+  saveOrders(items: any, token: any) {
+    console.log(items);
+
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    return this.http.post<any>('http://localhost:3000/purchase', x, {
-      headers,
+    return this.http.post<any>('http://localhost:3000/purchase', items, {
+      headers
     });
+    
   }
 }
