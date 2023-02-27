@@ -18,14 +18,16 @@ export class ProductsComponent implements OnInit {
     this.totalItem = this.cart.getItemCart();
     this.api.getProduct().subscribe((res) => {
       this.productList = res;
+      this.totalItem = this.cart.getItemCart();
+
       this.productList.forEach((element: any) => {
         Object.assign(element, { quantity: 1, total: element.price });
+        // this.cart.getItemCart();
       });
     });
   }
   addToCart(item: any) {
     this.cart.addtoCart(item);
     this.totalItem = this.cart.getItemCart();
-
   }
 }
