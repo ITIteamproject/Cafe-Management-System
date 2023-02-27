@@ -16,52 +16,26 @@ export class CartService {
   getProducts() {
     return this.productList.asObservable();
   }
-  // setProduct(product: any) {
-  //   this.cartItemList.push(...product);
-  //   this.productList.next(product);
-  // }
+
   getItemCart() {
     return this.cartItemList.length;
   }
-  // <<<<<<< HEAD
-  //   addtoCart(product: any) {
-  //     for (let i = 0; i < this.ids.length; i++) {
-  //       if (product._id == this.ids[i]) {
-  //         console.log('add 2 times');
-  //         console.log(product);
-  //         product.quantity += 1;
-  //         product.total += product.price;
-  //         return;
-  //       }
-  //     }
-  //     this.cartItemList.push(product);
-  //     this.productList.next(this.cartItemList);
-  //     this.getTotalPrice();
-  //     this.ids.push(product._id);
-  // =======
+
   addtoCart(product: any) {
-    this.cartItemList.map((a: any, index: any) => {
-      if (product._id === a._id) {
+    this.cartItemList.map((item: any, index: any) => {
+      if (product._id === item._id) {
         this.bool = true;
         this.index = index;
       }
     });
     if (this.bool) {
       this.cartItemList[this.index].quantity += 1;
+      this.cartItemList[this.index].total = this.cartItemList[this.index].quantity * this.cartItemList[this.index].price;
       this.bool = false;
     } else this.cartItemList.push(product);
 
     this.productList.next(this.cartItemList);
-    //this.getTotalPrice();
   }
-
-  // getTotalPrice(): number {
-  //   let x = 0;
-  //   this.cartItemList.map((a: any) => {
-  //     x += a.total ;
-  //   });
-  //   return x;
-  // }
 
   removeCart(product: any) {
     this.cartItemList.map((a: any, index: any) => {

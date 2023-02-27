@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   getTotalPrice(): number {
     let x = 0;
     this.product.map((a: any) => {
-      x += a.total*a.quantity;
+      x += a.total;
     });
     return x;
   }
@@ -36,11 +36,7 @@ export class CartComponent implements OnInit {
     this.grandTotal = 0;
   }
   save() {
-    const orderedItems = this.product.map((item) => {
-      console.log(item);
-      item.total = item.price * item.quantity;
-      return item;
-    });    
+    const orderedItems = this.product;
     this.cart.saveOrders(orderedItems, localStorage.getItem('token')).subscribe((res) => {
       console.log(res);
       this.router.navigateByUrl('/profile');
@@ -49,10 +45,12 @@ export class CartComponent implements OnInit {
   }
   addI(item: any) {
     item.quantity++;
+    item.total = item.price * item.quantity
      this.grandTotal = this.getTotalPrice();
   }
   removeI(item: any) {
     if (item.quantity > 1) item.quantity--;
+    item.total = item.price * item.quantity
     this.grandTotal = this.getTotalPrice();
   }
 }
