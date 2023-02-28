@@ -55,7 +55,7 @@ export class CartService {
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    return this.http.post<any>('http://localhost:3000/purchase', items, {
+    return this.http.post<any>('https://api-cafebuyers.onrender.com/purchase', items, {
       headers
     });
     
