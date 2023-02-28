@@ -60,9 +60,12 @@
                                 <mat-label>Email</mat-label>
                                 <input matInput placeholder="Email" email required name="email" ngModel
                                     #email="ngModel">
+                                    <!-- <mat-error *ngIf="isexist">User Already Exist</mat-error> -->
                                 <mat-error *ngIf="email.hasError('required') && !email.dirty">Email is
                                     required</mat-error>
                                 <mat-error *ngIf="email.invalid">Email is Invalid</mat-error>
+
+
                                 <mat-icon matSuffix style="color: #432f22;">email</mat-icon>
                             </mat-form-field>
 
@@ -88,6 +91,7 @@
                                 <mat-error *ngIf="repassword.errors?.['minlength']">
                                     Password must be of length 6
                                 </mat-error>
+                            <!-- <mat-error *ngIf="isexist">Password not matched</mat-error> -->
 
                                 <mat-icon matSuffix style="color: #432f22;">lock</mat-icon>
                             </mat-form-field>
@@ -99,7 +103,11 @@
                                 <mat-radio-button name="gender" value="female"><span
                                         class="female">Female</span></mat-radio-button>
                             </mat-radio-group>
-                            <button mat-raised-button style="background-color: #432f22;" class="login-button">
+                            <mat-error *ngIf="isexist">User Already Exist</mat-error>
+                            <mat-error *ngIf="password.value != repassword.value">Password not matched</mat-error>
+
+
+                            <button mat-raised-button style="background-color: #432f22;" class="login-button" [disabled]="!f.valid">
                                 <span style="color: white;">Sign Up</span>
                             </button>
 

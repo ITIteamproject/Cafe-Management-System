@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-
+ isexist =false;
   constructor(
     private serve: AuthService,
     private router: Router,
@@ -31,11 +31,18 @@ export class SignupComponent implements OnInit {
       )
       .subscribe({
         next: (res) => {
-          console.log('ok')
+          console.log("res")
+          console.log(res)
           localStorage.setItem('token', res["accessToken"]);
           localStorage.setItem('logged', 'true');
           this.router.navigateByUrl('/home');
         },
+        error:(error)=>{
+
+          this.isexist = error.error;
+          console.log("error")
+          console.log(error.error)
+        }
       });
   }
   login(x: NgForm) {
