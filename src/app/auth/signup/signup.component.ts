@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DatasharingService } from 'src/Services/datasharing.service';
+import { ProfileService } from 'src/Services/profile.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,6 +17,8 @@ export class SignupComponent implements OnInit {
     private serve: AuthService,
     private router: Router,
     private http: HttpClient,
+    private data: DatasharingService,
+    private profile: ProfileService
   ) {}
   ngOnInit(): void {}
 
@@ -35,6 +39,15 @@ export class SignupComponent implements OnInit {
           console.log(res)
           localStorage.setItem('token', res["accessToken"]);
           localStorage.setItem('logged', 'true');
+          // request user Image
+          this.profile.getUserImage(localStorage.getItem('token')).subscribe({
+            next: (res) => {
+              this.data.userImage = res['userImage'];
+            },
+            error: err => {
+              console.log(err)
+            }
+          });
           this.router.navigateByUrl('/home');
         },
         error:(error)=>{
