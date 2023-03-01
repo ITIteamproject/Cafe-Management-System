@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatchingDirective } from './matching.directive';
 import { FooterComponent } from './User/footer/footer.component';
 import { AboutComponent } from './User/about/about.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { AboutComponent } from './User/about/about.component';
     ProductsComponent,
     MatchingDirective,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    ErrorComponent,
+
   ],
   imports: [
     BrowserModule,

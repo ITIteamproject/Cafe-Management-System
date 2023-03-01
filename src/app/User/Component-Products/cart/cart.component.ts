@@ -10,25 +10,48 @@ import { CartService } from 'src/Services/cart.service';
 export class CartComponent implements OnInit {
   public product: any = [];
   public grandTotal!: number;
-
+  counter = 0;
   constructor(private cart: CartService, private router: Router) {}
   ngOnInit(): void {
     this.cart.getProducts().subscribe((res) => {
       this.product = res;
-      this.grandTotal = this.cart.getTotalPrice();
+      console.log(res);
     });
+    this.grandTotal = this.getTotalPrice();
   }
+  getTotalPrice(): number {
+    let x = 0;
+    this.product.map((a: any) => {
+      x += a.total;
+    });
+    return x;
+  }
+
   removeItem(item: any) {
     this.cart.removeCart(item);
+    this.grandTotal = this.grandTotal - (item.total*item.quantity);
   }
   emptyCart() {
     this.cart.removeAll();
+    this.grandTotal = 0;
   }
   save() {
-    console.log(this.product);
-    this.cart.saveOrders(this.product, localStorage.getItem('token')).subscribe((a) => {
-      console.log(a);
+    const orderedItems = this.product;
+    this.cart.saveOrders(orderedItems, localStorage.getItem('token')).subscribe((res) => {
+      console.log(res);
+
       this.router.navigateByUrl('/profile');
+      this.cart.removeAll();
     });
+  }
+  addI(item: any) {
+    item.quantity++;
+    item.total = item.price * item.quantity
+     this.grandTotal = this.getTotalPrice();
+  }
+  removeI(item: any) {
+    if (item.quantity > 1) item.quantity--;
+    item.total = item.price * item.quantity
+    this.grandTotal = this.getTotalPrice();
   }
 }

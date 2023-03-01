@@ -1,5 +1,4 @@
 <app-toolbar></app-toolbar>
-
 <section class="sec">
   <ng-container *ngIf="product.length == 0">
     <div class="container">
@@ -12,7 +11,11 @@
         <img src="assets/about-img.svg" alt="" />
         <h4 style="font-size: large; font-weight: bold">Your cart is empty!</h4>
         <h5 style="font-size: large; font-weight: bold">Add item Now</h5>
-        <button mat-raised-button style="background-color: #432f22; color:white" routerLink="/products">
+        <button
+          mat-raised-button
+          style="background-color: #432f22; color: white"
+          routerLink="/products"
+        >
           Shop Now
         </button>
       </div>
@@ -46,10 +49,34 @@
                   </td>
                   <td style="width: 25%">{{ item.description }}</td>
                   <th style="width: 12%">{{ item.price }}</th>
-                  <td style="width: 12%">{{ item.quantity }}</td>
+                  <td style="width: 12%">
+                    <i
+                      class="fa-solid fa-minus"
+                      (click)="removeI(item)"
+                      style="
+                        background-color: rgb(207, 215, 207);
+                        border-radius: 50%;
+                        cursor: pointer;
+                      "
+                    ></i>
+                    {{ item.quantity }}
+                    <i
+                      class="fa-solid fa-plus"
+                      (click)="addI(item)"
+                      style="
+                        background-color: rgb(9, 241, 9);
+                        border-radius: 50%;
+                        cursor: pointer;
+                      "
+                    ></i>
+                  </td>
                   <td style="width: 12%">{{ item.total }}</td>
                   <td>
-                    <button (click)="removeItem(item)" mat-icon-button color="warn">
+                    <button
+                      (click)="removeItem(item)"
+                      mat-icon-button
+                      color="warn"
+                    >
                       <mat-icon>delete</mat-icon>
                     </button>
                   </td>
@@ -57,12 +84,20 @@
                 <tr>
                   <td colspan="4"></td>
                   <td>
-                    <button (click)="emptyCart()" mat-raised-button color="warn">
+                    <button
+                      (click)="emptyCart()"
+                      mat-raised-button
+                      color="warn"
+                    >
                       Empty Cart
                     </button>
                   </td>
                   <td>
-                    <button mat-raised-button color="primary" routerLink="/products">
+                    <button
+                      mat-raised-button
+                      color="primary"
+                      routerLink="/products"
+                    >
                       Shop More
                     </button>
                   </td>

@@ -17,6 +17,9 @@ section {
 }
 .banner-image{
     background-image: url('../../../assets/home2_50.jpg');
+    background-repeat: no-repeat;
+    /* background-size: 100% 100%; */
+    background-position: center;
     background-size: cover;
 }
 .content h3 {
@@ -52,10 +55,19 @@ h4{
     font-size: 40px;
 }
 
-/* .btn {
+.check{
     background-color: #432f22;
     color: white;
+    width: 100px;
+    border-radius: 5px;
+    margin: auto;
 }
+
+.btn {
+    
+    color: white;
+}
+/*
 .price {
     text-decoration: line-through;
     font-size: 25px;
@@ -70,14 +82,16 @@ h4{
 }
 .card:hover{
     box-shadow: 5px 10px 18px #432f22;
-}
-@media screen and (max-width: 930px) {
-    .card-group{
-        display: block;
-        margin: auto;
-    }
-    .card{
-        width: 50%;
+}*/
+/*
+@media screen and (max-width: 991px) {
+    .banner-image{
+        background-image: url('../../../assets/home2_50.jpg');
+        background-repeat: no-repeat;
+         background-size: 100% 100%; 
+        background-size: fill;
+        width: 100%;
+        height: auto;
     }
 } */
 

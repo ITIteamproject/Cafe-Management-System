@@ -1,49 +1,73 @@
+<!-- <app-toolbar [color]=""></app-toolbar> -->
+<!-- <div class="nav"> -->
 <app-toolbar></app-toolbar>
-
+<!-- </div> -->
 <div class="body">
-    <div class="heading">
-        <img src="assets/heading-img.png" alt="">
-        <h3 style="color:#432f22">our Products</h3>
+  <div class="heading">
+    <img src="../../../../assets/prodIcon.png" alt="" />
+    <h3 style="color: #432f22; display: inline">PRODUCTS</h3>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="search-prod">
+        <input
+          class="form-control"
+          type="text"
+          name="search"
+          autocomplete="off"
+          placeholder="  Start searching for What you want ?!"
+          [(ngModel)]="searchVar"
+        />
+        <i
+          style="font-size: 30px"
+          class="fa fa-search search-icon"
+          aria-hidden="true"
+        ></i>
+        <button routerLink="/cart" class="btn btn-shop" style="color: #432f22">
+          <i style="font-size: 40px" class="fas fa-cart-plus"></i>
+          <div style="font-size: 12px" class="badge bg-danger">
+            {{ totalItem }}
+          </div>
+        </button>
+      </div>
     </div>
+  </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="search-prod">
-                <input class="form-control" type="text" name="search" autocomplete="off"
-                    placeholder="  Start searching for What you want ?!" [(ngModel)]="searchVar"> 
-                <i style="font-size: 30px;" class="fa fa-search search-icon" aria-hidden="true"></i>
-                <button routerLink="/cart" class="btn btn-shop" style="color:#432f22; ">
-                    <i style="font-size: 40px;" class="fas fa-cart-plus"></i>
-                    <div style="font-size: 12px; " class="badge bg-danger">{{totalItem}}</div>
-                </button>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row" fxLayoutAlign="center center">
+      <ng-container *ngFor="let item of productList | filter : searchVar">
+        <mat-card class="example-card">
+          <img
+            mat-card-image
+            src="{{ item.photo }}"
+            alt="Photo of a Shiba Inu"
+          />
+          <mat-card-header>
+            <mat-card-title>{{ item.name }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p>
+              {{ item.description }}
+            </p>
+            <p>
+              <strong>price: ${{ item.price }}</strong>
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              style="width: 100%; background-color: #432f22; color: white"
+              (click)="addToCart(item)"
+            >
+              Add to cart
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
     </div>
-
-    <div class="container">
-        <div class="row">
-            <ng-container *ngFor="let item of productList | filter: searchVar">
-                <mat-card class="example-card">
-                    <img mat-card-image src="{{ item.photo }}" alt="Photo of a Shiba Inu">
-                    <mat-card-header>
-                        <mat-card-title>{{item.name}}</mat-card-title>
-                    </mat-card-header>
-
-                    <mat-card-content>
-                        <p>
-                            {{item.description}}
-                        </p>
-                        <p><strong>price: ${{item.price}}</strong></p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-raised-button style="width: 100%; background-color: #432f22; color:white"
-                            (click)="addToCart(item)">Add to cart</button>
-
-                    </mat-card-actions>
-                </mat-card>
-            </ng-container>
-        </div>
-    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>

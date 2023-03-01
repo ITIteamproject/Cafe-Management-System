@@ -6,40 +6,34 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class CartService {
-  private ids = [];
   public cartItemList: any = [];
+  public bool = false;
+  public index: any;
   public productList = new BehaviorSubject<any>([]);
   constructor(private http: HttpClient) {}
 
   getProducts() {
     return this.productList.asObservable();
   }
-  setProduct(product: any) {
-    this.cartItemList.push(...product);
-    this.productList.next(product);
-  }
-  addtoCart(product: any) {
-    for (let i = 0; i < this.ids.length; i++) {
-      if (product._id == this.ids[i]) {
-        console.log('add 2 times');
-        console.log(product);
-        product.quantity += 1;
-        product.total += product.price;
-        return;
-      }
-    }
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    this.ids.push(product._id);
+
+  getItemCart() {
+    return this.cartItemList.length;
   }
 
-  getTotalPrice(): number {
-    let x = 0;
-    this.cartItemList.map((a: any) => {
-      x += a.total;
+  addtoCart(product: any) {
+    this.cartItemList.map((item: any, index: any) => {
+      if (product._id === item._id) {
+        this.bool = true;
+        this.index = index;
+      }
     });
-    return x;
+    if (this.bool) {
+      this.cartItemList[this.index].quantity += 1;
+      this.cartItemList[this.index].total = this.cartItemList[this.index].quantity * this.cartItemList[this.index].price;
+      this.bool = false;
+    } else this.cartItemList.push(product);
+
+    this.productList.next(this.cartItemList);
   }
 
   removeCart(product: any) {
@@ -53,13 +47,17 @@ export class CartService {
   removeAll() {
     this.cartItemList = [];
     this.productList.next(this.cartItemList);
+    // this.productList.next(this.cartItemList);
   }
-  saveOrders(x: any, token: any) {
+  saveOrders(items: any, token: any) {
+    console.log(items);
+
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    return this.http.post<any>('http://localhost:3000/purchase', x, {
-      headers,
+    return this.http.post<any>('https://api-cafebuyers.onrender.com/purchase', items, {
+      headers
     });
+    
   }
 }

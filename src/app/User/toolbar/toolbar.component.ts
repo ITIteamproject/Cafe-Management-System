@@ -1,6 +1,7 @@
-import { Component, OnInit , HostListener} from '@angular/core';
+import { Component, OnInit , HostListener, Input} from '@angular/core';
 import { DatasharingService } from 'src/Services/datasharing.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -24,15 +25,16 @@ export class ToolbarComponent implements OnInit {
     //   this.isAuth = res;
     // });
   }
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll() { 
-  //   let element = document.querySelector('.navbar') as HTMLElement; 
-  //   if (window.pageYOffset > element.clientHeight) { 
-  //     element.classList.add('scrolled'); 
-  //   } else { 
-  //     element.classList.remove('scrolled'); 
-  //   } 
-  // }
+  // @Input() color: string;
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() { 
+    let element = document.querySelector('.navbar') as HTMLElement; 
+    if (window.pageYOffset > element.clientHeight) { 
+      element.classList.add('scrolled'); 
+    } else { 
+      element.classList.remove('scrolled'); 
+    } 
+  }
   Logout() {
     this.bool = false;
     localStorage.setItem('logged', 'false');

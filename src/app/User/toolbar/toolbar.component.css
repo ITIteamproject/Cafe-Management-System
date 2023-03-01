@@ -1,3 +1,4 @@
+
 mat-toolbar img {
     width: 50px;
 }
@@ -36,24 +37,28 @@ input::placeholder {
     color: rgb(255, 255, 255);
     text-decoration: none;
     text-transform: capitalize;
+    
 }
 
-/* .navbar-default{
-    transition:800ms ease;
+.navbar-default{
+    transition:500ms ease;
     background:transparent;
   }
 .navbar-default.scrolled{
-    background:#432f22;
-  } */
-
+    background:#432f22 !important;
+  }
+/* .navbar{
+    background-color: #432f22;
+} */
 .user {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
-    bottom: 8.5px;
+    /* bottom: 8.5px; */
     right: 7px;
+    outline: none;
 }
 
 .user img {
@@ -65,13 +70,15 @@ input::placeholder {
     object-fit: cover;
 }
 
-.navbar {
-    background-color:#432f22;
-    height:70px
+.coffee{
+    font-size: 40px;
+    color: #fff;
+    /* font-weight: bold; */
 }
 
 .log{
-    color: #432f22;
+    color: white;
+    font-size: 20px;
 }
 
 .login{
@@ -82,26 +89,27 @@ input::placeholder {
     box-sizing: border-box;
     max-height: 100%;
 }
-
-.la-coffee{
-    color: white;
-    font-size:30px;
+.log{
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: capitalize;
 }
-/* .logoutbtn{
-    display:inline-block;
-} */
+.logout, .profile{
+    display: none;
+}
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width: 991px) {
     .log,.example-icon {
       display: none;
     }
     .login{
         display: block;
     }
-    .logoutbtn{
+    .logoutbtn, .user{
         display: none;
     }
-    .logout{
+    .logout, .profile{
         display: block;
     }
 }

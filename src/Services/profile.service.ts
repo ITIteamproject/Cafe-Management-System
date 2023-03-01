@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProfileService {
-  private baseURL = 'http://localhost:3000/profile';
-  private orderURL = 'http://localhost:3000/orders';
+  private baseURL = 'https://api-cafebuyers.onrender.com/profile';
+  private orderURL = 'https://api-cafebuyers.onrender.com/orders';
 
   constructor(private http: HttpClient) {}
 
