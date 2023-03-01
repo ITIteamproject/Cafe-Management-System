@@ -104,7 +104,7 @@
                                         class="female">Female</span></mat-radio-button>
                             </mat-radio-group>
                             <mat-error *ngIf="isexist">User Already Exist</mat-error>
-                            <mat-error *ngIf="password.value != repassword.value">Password not matched</mat-error>
+                            <!-- <mat-error *ngIf="password.value != repassword.value">Password not matched</mat-error> -->
 
 
                             <button mat-raised-button style="background-color: #432f22;" class="login-button" [disabled]="!f.valid">
