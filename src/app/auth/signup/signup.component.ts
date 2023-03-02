@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DatasharingService } from 'src/Services/datasharing.service';
 import { ProfileService } from 'src/Services/profile.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -60,13 +61,20 @@ export class SignupComponent implements OnInit {
   }
   login(x: NgForm) {
     const y = x.value;
-
     this.serve.login(y.email, y.password).subscribe((res) => {
       console.log(res);
       localStorage.setItem('token', res.accessToken);
       localStorage.setItem('logged', 'true');
       this.router.navigateByUrl('/home');
+    }, error => {
+      
+      this.test();
     });
+  }
+  test() {
+    if (!this.serve.checkAuth()) {
+      Swal.fire('Login Failed', 'Your Email or password is incorrect', 'error');
+    }
   }
   logOut() {
     // this.serve.logOut().subscribe();

@@ -22,6 +22,8 @@ import { MatchingDirective } from './matching.directive';
 import { FooterComponent } from './User/footer/footer.component';
 import { AboutComponent } from './User/about/about.component';
 import { ErrorComponent } from './error/error.component';
+import { ToastrModule, ToastContainerModule } from 'ngx-toastr';
+import { ToastService, AngularToastifyModule } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,12 @@ import { ErrorComponent } from './error/error.component';
     Ng2SearchPipeModule,
     ReactiveFormsModule,
     MatToolbarModule,
+    AngularToastifyModule,
+    ToastContainerModule,
+    ToastrModule.forRoot({timeOut: 3500,
+      positionClass: 'toast-bottom-center',
+      preventDuplicates: true,}),
+      
   ],
   providers: [],
   bootstrap: [AppComponent],
